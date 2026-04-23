@@ -13,11 +13,15 @@ Câu A1:
     * Ảnh minh họa: ![Tab Network Shopee](./screenshots/network_shopee.png)
 
 Câu A2:
-1.Dùng <div class="header"> -> Sửa: Thay bằng thẻ <header>.
-2.Dùng <div class="menu"> -> Sửa: Thay bằng thẻ <nav>
-3.Dùng <div class="main"> -> Sửa: Thay bằng thẻ <main>.
-4.Dùng <div class="footer"> -> Sửa: Thay bằng thẻ <footer>.
-* Code sửa lại:
+### Câu A2 — Semantic HTML
+**4 lỗi Semantic và cách sửa:**
+1. Lỗi: Dùng `<div class="header">` -> Sửa: Thay bằng thẻ `<header>`.
+2. Lỗi: Dùng `<div class="menu">` -> Sửa: Thay bằng thẻ `<nav>`.
+3. Lỗi: Dùng `<div class="main">` -> Sửa: Thay bằng thẻ `<main>`.
+4. Lỗi: Dùng `<div class="footer">` -> Sửa: Thay bằng thẻ `<footer>`.
+
+**Code sửa lại:**
+```html
 <header>
     <h1>ShopTLU</h1>
     <nav>
@@ -32,7 +36,7 @@ Câu A2:
     </article>
 </main>
 <footer>© 2026 ShopTLU</footer>
-  * Nguồn tham chiếu: tuan_1_html5\04_visible_part_html.md - Phần: Bản đồ Semantic Elements.
+```
 
 Câu A3:
 ---------------------------
