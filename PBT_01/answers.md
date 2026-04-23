@@ -76,13 +76,13 @@ Câu A4:
 PHẦN B-BÀI B3:DEBUG HTML    
 Liệt kê các lỗi trong đoạn code gốc:
 
-Lỗi 1: Dòng 1 – Thiếu khai báo loại tài liệu html trong thẻ DOCTYPE – Cách sửa: Sửa thành <!DOCTYPE html>.
-Lỗi 2: Dòng 2 – Thẻ <html> thiếu thuộc tính ngôn ngữ – Cách sửa: Thêm lang="vi" hoặc lang="en".
-Lỗi 3: Dòng 6 – Thẻ <meta charset> viết sai giá trị "utf8" – Cách sửa: Sửa chính xác thành charset="UTF-8".
-Lỗi 4: Dòng 6 – Thẻ <meta> đặt sau thẻ <title> – Cách sửa: Đưa thẻ <meta charset> lên trên cùng ngay sau thẻ <head>.
-Lỗi 5: Dòng 9 – Thẻ kết thúc <h1> viết nhầm thành <h1> – Cách sửa: Đổi thành </h1>.
-Lỗi 6: Dòng 11 – Thẻ <header> đặt bên trong thẻ <body> nhưng sau <h1> là sai cấu trúc logic – Cách sửa: Đưa <h1> vào bên trong thẻ <header>.
-Lỗi 7: Dòng 13 – Thẻ kết thúc <a> thiếu dấu gạch chéo / – Cách sửa: Sửa thành </a>.
-Lỗi 8: Dòng 13 – Thuộc tính href="home" không dẫn đến một liên kết hoặc ID hợp lệ – Cách sửa: Sửa thành href="index.html" hoặc href="#".
-Lỗi 9: Dòng 10 – Sử dụng các khoảng trống xuống hàng thừa không cần thiết giữa thẻ <body> và <header> – Cách sửa: Xóa bớt khoảng trắng để code gọn gàng.
-Lỗi 10: Tổng thể – Thiếu các thẻ đóng quan trọng ở cuối file như </nav>, </header>, </body>, </html> – Cách sửa: Thêm đầy đủ các thẻ đóng theo đúng thứ tự lồng nhau.
+* Lỗi 1: Dòng 1 – Thiếu khai báo loại tài liệu html trong thẻ DOCTYPE – Cách sửa: Sửa thành <!DOCTYPE html>.
+* Lỗi 2: Dòng 2 – Thẻ <html> thiếu thuộc tính ngôn ngữ – Cách sửa: Thêm lang="vi" hoặc lang="en".
+* Lỗi 3: Dòng 6 – Thẻ <meta charset> viết sai giá trị "utf8" – Cách sửa: Sửa chính xác thành charset="UTF-8".
+* Lỗi 4: Dòng 6 – Thẻ <meta> đặt sau thẻ <title> – Cách sửa: Đưa thẻ <meta charset> lên trên cùng ngay sau thẻ <head>.
+* Lỗi 5: Dòng 9 – Thẻ kết thúc <h1> viết nhầm thành <h1> – Cách sửa: Đổi thành </h1>.
+* Lỗi 6: Dòng 11 – Thẻ <header> đặt bên trong thẻ <body> nhưng sau <h1> là sai cấu trúc logic – Cách sửa: Đưa <h1> vào bên trong thẻ <header>.
+* Lỗi 7: Dòng 13 – Thẻ kết thúc <a> thiếu dấu gạch chéo / – Cách sửa: Sửa thành </a>.
+* Lỗi 8: Dòng 13 – Thuộc tính href="home" không dẫn đến một liên kết hoặc ID hợp lệ – Cách sửa: Sửa thành href="index.html" hoặc href="#".
+* Lỗi 9: Dòng 10 – Sử dụng các khoảng trống xuống hàng thừa không cần thiết giữa thẻ <body> và <header> – Cách sửa: Xóa bớt khoảng trắng để code gọn gàng.
+* Lỗi 10: Tổng thể – Thiếu các thẻ đóng quan trọng ở cuối file như </nav>, </header>, </body>, </html> – Cách sửa: Thêm đầy đủ các thẻ đóng theo đúng thứ tự lồng nhau.
