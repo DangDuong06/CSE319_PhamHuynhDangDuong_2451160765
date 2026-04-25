@@ -88,7 +88,21 @@ Câu A4:
 * **Lỗi 10:** Tổng thể – Thiếu các thẻ đóng quan trọng (`</nav>`, `</header>`, `</body>`, `</html>`) – Cách sửa: Thêm đầy đủ thẻ đóng theo đúng thứ tự.
 
 ### PHẦN B - BÀI B4: PHÂN TÍCH TRANG WEB THẬT 
+
+
 ### 1. Phân tích thẻ Semantic HTML5
-- **Thẻ `<header>`**: Chứa logo, thanh tìm kiếm và menu chính.
-- **Thẻ `<footer>`**: Chứa thông tin bản quyền, chính sách và liên hệ.
-- **Thẻ `<section>`**: Dùng để bao quanh các khối nội dung như "Săn sale online" hoặc "Sản phẩm mới".
+* Nguồn tham chiếu: tuan_1_html5/04_semantic_html.md — Mục "Cấu trúc trang web với các thẻ Semantic".
+* Thẻ `<header>`**: Chứa logo, thanh tìm kiếm và menu chính.
+* Thẻ `<footer>`**: Chứa thông tin bản quyền, chính sách và liên hệ.
+* Thẻ `<section>`**: Dùng để bao quanh các khối nội dung như "Săn sale online" hoặc "Sản phẩm mới".
+
+#### 2. Phân tích Table
+* Nguồn tham chiếu: tuan_1_html5/05_tables_hyperlinks.md.
+* Nội dung: Thông số kỹ thuật sản phẩm.
+* Nhận xét: Trang web dùng `<ul>`/`<li>` thay vì `<table>`. Do đó không có `<thead>` và `<tbody>`.
+
+#### 3. Phân tích form
+* Nguồn tham chiếu: tuan_1_html5/01_introduction_html_universe.md.
+
+* 1.Action: /tim-kiem.
+* 2.Input types: Ô nhập liệu là type="text".
