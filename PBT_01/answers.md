@@ -7,12 +7,11 @@ Câu A1:
   Bước 5: Response chạy ngược lại (Cáp quang - VNPT - router - laptop); Chrome nhận file HTML, CSS, JS và render ra giao diện trang chủ Shopee.
   * Nguồn tham chiếu: tuan_1_html5/01_introduction_html_universe.md - Mục: 🎬 Cuộc Hành Trình 0.3 Giây Xuyên Đại Dương.
 2.Trong tab Network khi truy cập shopee:
-    - Status Code: 200 (yêu cầu thành công)
-    - Tổng thời gian load lại: 1.49s
-    - Request CSS: xác định qua cột Type là "Stylesheet"
-    * Ảnh minh họa: ![Tab Network Shopee](./screenshots/network_shopee.png)
+* Status Code: 200 (yêu cầu thành công)
+* Tổng thời gian load lại: 1.49s
+*  Request CSS: xác định qua cột Type là "Stylesheet"
+* Ảnh minh họa: ![Tab Network Shopee](./screenshots/network_shopee.png)
 
-Câu A2:
 ### Câu A2 — Semantic HTML
 **4 lỗi Semantic và cách sửa:**
 1. Lỗi: Dùng `<div class="header">` -> Sửa: Thay bằng thẻ `<header>`.
@@ -106,3 +105,127 @@ Câu A4:
 
 * 1.Action: /tim-kiem.
 * 2.Input types: Ô nhập liệu là type="text".
+
+### PHẦN C: SUY LUẬN
+* Nguồn tham chiếu:** `tuan_1_html5/04_semantic_html.md`
+* Câu 1C:
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+</head>
+<body>
+
+   
+    <header> <!-- Header: phần đầu trang -->
+        
+        <nav> <!-- Nav: menu điều hướng chính -->
+            <ul>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <nav aria-label="breadcrumb"> <!-- Breadcrumb: điều hướng vị trí -->
+        
+        <ol><!-- ol vì có thứ tự cấp -->
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li></li>
+        </ol>
+    </nav>
+
+    
+    <main><!-- Nội dung chính -->
+
+        
+        <section><!-- Section chứa sản phẩm -->
+
+           
+            <article> <!-- Article: 1 sản phẩm độc lập -->
+
+             
+                <div>   <!-- Ảnh sản phẩm -->
+                    
+                    <img src="#" alt=""><!-- nhóm ảnh -->
+                    <img src="#" alt="">
+                    <img src="#" alt="">
+                    <img src="#" alt="">
+                    <img src="#" alt="">
+                </div>
+
+                
+                <div><!-- Thông tin sản phẩm -->
+                    <h1></h1> <!-- tên -->
+                    <p></p>   <!-- giá -->
+
+                    <div>
+                        <span></span> <!-- rating -->
+                    </div>
+
+                    <p></p> <!-- mô tả -->
+                </div>
+
+                <!-- Thông số kỹ thuật -->
+                <section>
+                    <h2></h2>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- Đánh giá -->
+                <section>
+                    <h2></h2>
+
+                    <article>
+                        <h3></h3>
+                        <p></p>
+                    </article>
+
+                </section>
+
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <h2></h2>
+            <ul>
+                <li><a href="#"></a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p></p>
+    </footer>
+
+</body>
+</html>
+```
+
+* Câu 2C:
+* Nguồn tham chiếu: tuan_1_html5/04_semantic_html.md — Mục "Lợi ích của Semantic HTML".
+
+    Quan điểm cho rằng "chỉ cần dùng thẻ `<div>` và đặt tên class là đủ" là một tư duy chưa hoàn thiện trong lập trình Web hiện đại. 2 lý do kỹ thuật quan trọng mà thẻ `<div>` không thể thay thế được Semantic HTML:
+
+    1. **Tối ưu hóa công cụ tìm kiếm (SEO):** Các robot của Google hay Bing sử dụng thẻ Semantic để hiểu cấu trúc và tầm quan trọng của nội dung. Một thẻ `<h1>` chứa tên sản phẩm sẽ có trọng số cao hơn nhiều so với một thẻ `<div class="title">`. Nếu dùng toàn bộ là div, website sẽ mất đi lợi thế cạnh tranh trên trang kết quả tìm kiếm.
+
+    2. **Khả năng tiếp cận (Accessibility - A11y):** Đây là yếu tố nhân văn và kỹ thuật quan trọng. Các trình đọc màn hình (Screen Readers) dành cho người khiếm thị dựa vào các thẻ như `<nav>`, `<main>`, `<button>` để giúp họ điều hướng. Nếu dùng toàn div, người dùng khiếm thị sẽ không thể biết đâu là menu, đâu là nội dung chính, khiến website trở nên vô dụng với họ.
+
+    **Ví dụ cụ thể:** Khi dùng thẻ `<nav>`, trình duyệt tự hiểu đây là khu vực điều hướng. Nếu dùng `<div class="nav">`, trình duyệt chỉ coi đó là một khối hộp vô danh, không có ý nghĩa về mặt chức năng.
+
+    **Trường hợp dùng `<div>` vẫn phù hợp:** Thẻ `<div>` nên được dùng khi chúng ta chỉ cần một cái "hộp" để gom nhóm các phần tử nhằm mục đích căn chỉnh giao diện (layout), trang trí CSS mà không chứa đựng ý nghĩa nội dung đặc biệt nào (ví dụ: các thẻ wrapper, container để căn giữa trang).
