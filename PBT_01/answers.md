@@ -86,3 +86,9 @@ Câu A4:
 * **Lỗi 8:** Dòng 13 – Thuộc tính `href="home"` không hợp lệ – Cách sửa: Sửa thành `href="index.html"`.
 * **Lỗi 9:** Dòng 10 – Sử dụng các khoảng trống xuống hàng thừa không cần thiết – Cách sửa: Xóa bớt khoảng trắng thừa.
 * **Lỗi 10:** Tổng thể – Thiếu các thẻ đóng quan trọng (`</nav>`, `</header>`, `</body>`, `</html>`) – Cách sửa: Thêm đầy đủ thẻ đóng theo đúng thứ tự.
+
+### PHẦN B - BÀI B4: PHÂN TÍCH TRANG WEB THẬT 
+### 1. Phân tích thẻ Semantic HTML5
+- **Thẻ `<header>`**: Chứa logo, thanh tìm kiếm và menu chính.
+- **Thẻ `<footer>`**: Chứa thông tin bản quyền, chính sách và liên hệ.
+- **Thẻ `<section>`**: Dùng để bao quanh các khối nội dung như "Săn sale online" hoặc "Sản phẩm mới".
