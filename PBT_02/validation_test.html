@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra HTML5 validation</title>
+</head>
+<body>
+    <h2>Test HTML5 Validation (Câu A2)</h2>
+    <form action="#">
+        
+        <div>
+            <label>1. Trường bắt buộc (Required):</label>
+            <input type="text" required value="">
+        </div>
+
+        <div>
+            <label>2. Định dạng Email (abc):</label>
+            <input type="email" value="abc">
+        </div>
+
+        <div>
+            <label>3. Số từ 1-10 :</label>
+            <input type="number" min="1" max="10" value="15">
+        </div>
+
+        <div>
+            <label>4. Đúng 10 chữ số (Nhập abc123):</label>
+            <input type="text" pattern="[0-9]{10}" value="abc123">
+        </div>
+
+        <div>
+            <label>5. Mật khẩu tối thiểu 8 ký tự (Nhập 123):</label>
+            <input type="password" minlength="8" value="123">
+        </div>
+
+        <button type="submit">Nhấn để xem lỗi (Submit)</button>
+    </form>
+</body>
+</html>
