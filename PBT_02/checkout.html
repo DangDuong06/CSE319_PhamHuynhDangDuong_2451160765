@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form đặt hàng với validation phức tạp</title>
+</head>
+<body>
+    <h1>Giỏ hàng của bạn</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Sách Toán 8</td>
+                <td>50.000đ</td>
+                <td>1</td>
+                <td>50.000đ</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sách Văn 8</td>
+                <td>45.000đ</td>
+                <td>2</td>
+                <td>90.000đ</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right;"><strong>Tổng cộng:</strong></td>
+                <td><strong>140.000đ</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Thanh toán & Ưu đãi</legend>
+            <label>Phương thức:</label>
+            <input type="radio" name="pay" value="cod" checked style="width:auto"> COD 
+            <input type="radio" name="pay" value="bank" style="width:auto"> Chuyển khoản
+
+            <label for="search">Tìm sản phẩm (Datalist):</label>
+            <input list="books" id="search" name="search">
+            <datalist id="books">
+                <option value="Sách Kỹ năng BA">
+                <option value="Lập trình Python">
+            </datalist>
+
+            <label for="code">Mã giảm giá (SALE + 4 số):</label>
+            <input type="text" id="code" name="code" pattern="SALE[0-9]{4}" placeholder="SALE2026">
+        </fieldset>
+
+        <fieldset>
+            <legend>Giao hàng</legend>
+            <label for="date">Ngày giao mong muốn:</label>
+            <input type="date" id="date" name="date" min="2026-04-28">
+
+            <label for="days">Số ngày giao dự kiến (1-7):</label>
+            <input type="range" id="days" name="days" min="1" max="7">
+
+            <label>Tiến trình đơn hàng:</label>
+            <progress value="50" max="100" style="width:100%"></progress>
+
+            <label>Điểm tích lũy:</label>
+            <meter value="75" min="0" max="100"></meter>
+        </fieldset>
+
+        <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+    </form>
+</body>
+</html>
