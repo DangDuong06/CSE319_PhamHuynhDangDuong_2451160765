@@ -55,3 +55,23 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
 * vì aria-label sẽ ghi đè nội dung của `<label>`, có thể gây nhầm lẫn nếu thông tin không khớp nhau
 
 * Nguồn tham chiếu : 07_forms_interactive.md: Mục Accessibility — Form cho mọi người.
+
+### CÂU A4
+### 1.
+* Cơ chế: Thuộc tính này cho phép trình duyệt trì hoãn việc tải hình ảnh cho đến khi người dùng cuộn trang đến gần vị trí của ảnh đó.
+* Cải thiện: Giúp tăng tốc độ tải trang ban đầu , tiết kiệm băng thông cho người dùng và giảm tải cho server.
+* Không nên dùng: Không nên dùng cho các ảnh nằm ở phần đầu trang như Banner chính hoặc Logo, vì sẽ làm chậm hiển thị nội dung quan trọng nhất khi vừa mở trang.
+
+### 2.
+* Khả năng tương thích: Mỗi trình duyệt hỗ trợ các định dạng video khác nhau; việc cung cấp nhiều nguồn giúp đảm bảo video luôn chạy được trên mọi nền tảng.
+* 3 Format video web phổ biến:
+  1. `.mp4` (H.264): Phổ biến nhất, hỗ trợ hầu hết trình duyệt.
+  2. `.webm`: Nhẹ, chất lượng cao, tối ưu cho Chrome và Firefox.
+  3. `.ogg`: Một định dạng mã nguồn mở khác cho web.
+
+#### 3.
+* Công dụng: Cung cấp văn bản thay thế nếu ảnh bị lỗi không hiển thị và giúp Screen Reader đọc mô tả ảnh cho người khiếm thị.
+* **Viết alt tốt cho 3 trường hợp:**
+  1. `Ảnh sản phẩm iPhone 16:` alt="Điện thoại iPhone 16 màu Titan Sa mạc góc nhìn nghiêng".
+  2. `Ảnh trang trí (decorative):` alt="" (Để trống để Screen Reader bỏ qua, tránh gây nhiễu thông tin).
+  3. `Ảnh biểu đồ doanh thu Q1/2026:` alt="Biểu đồ cột thể hiện doanh thu Quý 1 năm 2026 ".
