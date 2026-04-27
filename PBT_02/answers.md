@@ -30,3 +30,28 @@
     - tại sao : thuộc tính `minlenght = 8` bắt buộ chuỗi nhập vào phải có 8 ký tự trở lên, trong kho 123 chỉ có 3 ký tự
 
 * Nguồn tham chiếu: `07_forms_interactive.md`: Mục HTML5 Validation & Attributes.
+
+### CÂU A3
+### 1.
+* Screen reader sẽ đọc nội dung của thẻ `<label>` khi người dùng focus vào ô nhập liệu, giúp họ biết chính xác ô đó dùng để nhập thông tin gì (ví dụ: "Email").
+
+### 2. 
+* Khi nào dùng: Dùng để nhóm các phần tử có liên quan logic với nhau trong một form lớn, giúp cấu trúc form mạch lạc và dễ hiểu hơn cho cả người dùng bình thường và công cụ hỗ trợ.
+* Ví dụ cụ thể: 
+Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
+```html
+  <fieldset>
+      <legend>Thông tin giao hàng</legend>
+      <label for="city">Thành phố:</label>
+      <input type="text" id="city" name="city">
+      <label for="addr">Địa chỉ chi tiết:</label>
+      <input type="text" id="addr" name="addr">
+  </fieldset>
+```
+
+
+### 3.
+* aria-label: Dùng khi 1 phẩn tử tương tác(button) không có văn bản hiển thị trên màn hình nhưng vẫn cần mô tả cho screen reader
+* vì aria-label sẽ ghi đè nội dung của `<label>`, có thể gây nhầm lẫn nếu thông tin không khớp nhau
+
+* Nguồn tham chiếu : 07_forms_interactive.md: Mục Accessibility — Form cho mọi người.
