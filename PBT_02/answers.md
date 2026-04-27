@@ -75,3 +75,19 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
   1. `Ảnh sản phẩm iPhone 16:` alt="Điện thoại iPhone 16 màu Titan Sa mạc góc nhìn nghiêng".
   2. `Ảnh trang trí (decorative):` alt="" (Để trống để Screen Reader bỏ qua, tránh gây nhiễu thông tin).
   3. `Ảnh biểu đồ doanh thu Q1/2026:` alt="Biểu đồ cột thể hiện doanh thu Quý 1 năm 2026 ".
+
+
+### CÂU A5
+#### 1.
+* `Thẻ `<img>` độc lập:` Chỉ đơn thuần là chèn một hình ảnh vào trang web. Trình duyệt và các công cụ tìm kiếm xem nó như một phần tử đồ họa thông thường
+* `Thẻ `<figure>`:` Là một đơn vị nội dung độc lập. Nó bao bọc hình ảnh và các nội dung liên quan, giúp báo hiệu cho trình duyệt rằng đây là một khối tư liệu, sơ đồ hoặc ảnh minh họa có ý nghĩa cụ thể.
+
+#### 3.
+<figure>
+    <img src="Doraemon.jpg" 
+         alt="Truyện Doraemon phiên bản mới nhất" 
+         loading="lazy">
+    <figcaption>Hình 1: truyện Doraemon phiên bản mới nhất - Tác giả Dale Carnegie</figcaption>
+</figure>
+
+* Nguồn tham chiếu: 06_graphics_multimedia.md: Mục Multimedia Elements — <figure> & <figcaption>.
