@@ -79,15 +79,16 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
 
 ### CÂU A5
 #### 1.
-* `Thẻ `<img>` độc lập:` Chỉ đơn thuần là chèn một hình ảnh vào trang web. Trình duyệt và các công cụ tìm kiếm xem nó như một phần tử đồ họa thông thường
-* `Thẻ `<figure>`:` Là một đơn vị nội dung độc lập. Nó bao bọc hình ảnh và các nội dung liên quan, giúp báo hiệu cho trình duyệt rằng đây là một khối tư liệu, sơ đồ hoặc ảnh minh họa có ý nghĩa cụ thể.
+* `Thẻ <img> độc lập:` Chỉ đơn thuần là chèn một hình ảnh vào trang web. Trình duyệt và các công cụ tìm kiếm xem nó như một phần tử đồ họa thông thường
+* `Thẻ <figure>:` Là một đơn vị nội dung độc lập. Nó bao bọc hình ảnh và các nội dung liên quan, giúp báo hiệu cho trình duyệt rằng đây là một khối tư liệu, sơ đồ hoặc ảnh minh họa có ý nghĩa cụ thể.
 
-#### 3.
+#### 2.
+```html
 <figure>
     <img src="Doraemon.jpg" 
          alt="Truyện Doraemon phiên bản mới nhất" 
          loading="lazy">
     <figcaption>Hình 1: truyện Doraemon phiên bản mới nhất - Tác giả Dale Carnegie</figcaption>
 </figure>
-
-* Nguồn tham chiếu: 06_graphics_multimedia.md: Mục Multimedia Elements — <figure> & <figcaption>.
+```
+* Nguồn tham chiếu: 06_graphics_multimedia.md: Mục Multimedia Elements — `<figure> & <figcaption>`.
