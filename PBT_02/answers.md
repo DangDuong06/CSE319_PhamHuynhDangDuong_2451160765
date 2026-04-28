@@ -116,3 +116,27 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
 
 ---
 * Nguồn tham chiếu:`07_forms_interactive.md: Mục Accessibility & Best Practices.`
+
+### Câu C2 
+
+#### 1. Viết pattern regex: 
+* **CMND/CCCD (Đúng 12 chữ số):** `pattern="[0-9]{12}"`
+* **Số tài khoản (Từ 10 đến 15 chữ số):** `pattern="[0-9]{10,15}"`
+* **Mã PIN (Đúng 6 chữ số):** `pattern="[0-9]{6}"` (kết hợp với `type="password"`)
+
+#### 2. HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa? Tại sao?
+* Không đủ an toàn
+* **Tại sao:** HTML5 validation chỉ là Client-side validation. Kẻ tấn công hoặc người dùng có kỹ thuật có thể dễ dàng vượt qua bằng cách:
+    * Tắt JavaScript hoặc chỉnh sửa thuộc tính HTML trực tiếp qua công cụ Devtools
+    * Sử dụng các công cụ như Postman để gửi yêu cầu trực tiếp đến máy chủ mà không thông qua giao diện web
+
+#### 3. 
+* **So sánh giá trị giữa các trường:** Ví dụ kiểm tra "Mật khẩu" và "Nhập lại mật khẩu" có khớp nhau không
+* **Kiểm tra tính duy nhất:** Ví dụ kiểm tra xem Email hoặc Số tài khoản đã tồn tại trong cơ sở dữ liệu chưa
+* **Logic nghiệp vụ phức tạp:** Ví dụ kiểm tra ngày đến phải sau ngày đi, hoặc tổng số tiền rút không được vượt quá số dư hiện tại
+
+#### 4. 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend:
+* **Dữ liệu rác và tấn công Injection:** Kẻ xấu có thể chèn các đoạn mã độc vào các ô nhập liệu để phá hoại hoặc lấy cắp dữ liệu từ máy chủ
+* **Sai lệch quy trình nghiệp vụ :** Người dùng có thể lách luật để thực hiện các hành vi không cho phép, ví dụ như chuyển số tiền âm hoặc tạo tài khoản với thông tin không hợp lệ, gây tổn thất tài chính cho ngân hàng
+
+* Nguồn tham chiếu:`07_forms_interactive.md`: Mục HTML5 Validation Attributes & Best Practices.
