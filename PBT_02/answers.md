@@ -92,3 +92,27 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
 </figure>
 ```
 * Nguồn tham chiếu: 06_graphics_multimedia.md: Mục Multimedia Elements — `<figure> & <figcaption>`.
+
+
+### PHẦN C 
+#### Câu C1 
+
+1. **Lỗi 1:** Dòng 2 — Input "Tên" thiếu `<label for="...">`, vi phạm accessibility
+   * **Sửa:** `<label for="name">Tên:</label> <input type="text" id="name" name="name" required>`
+2. **Lỗi 2:** Dòng 4 — Input Email thiếu thuộc tính `id` để liên kết với nhãn và `name` để gửi dữ liệu.
+   * **Sửa:** `<label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn">`
+3. **Lỗi 3:** Dòng 6 — Input Password thiếu `name`, dữ liệu mật khẩu sẽ không được gửi lên server.
+   * **Sửa:** `<input type="password" id="pass" name="pass" placeholder="Mật khẩu">`
+4. **Lỗi 4:** Dòng 7 — Ô nhập lại mật khẩu thiếu `name` và không có cơ chế so sánh với ô trên 
+   * **Sửa:** `<input type="password" id="repass" name="repass" placeholder="Nhập lại mật khẩu">`
+5. **Lỗi 5:** Dòng 9 — Số điện thoại dùng `type="text"`, không tối ưu bàn phím số cho thiết bị di động.
+   * **Sửa:** `Phone: <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">`
+6. **Lỗi 6:** Dòng 11 — Thẻ `<select>` thiếu `name` và `id`, đồng thời các `<option>` thiếu thuộc tính `value`.
+   * **Sửa:** `<select id="city" name="city"> <option value="hn">Hà Nội</option> </select>`
+7. **Lỗi 7:** Dòng 16 — Thẻ `<label>` bao quanh văn bản nhưng không bao quanh `input` checkbox và thiếu `for`, khiến việc click vào nhãn không kích hoạt checkbox.
+   * **Sửa:** `<label><input type="checkbox" name="agree"> Tôi đồng ý điều khoản</label>`
+8. **Lỗi 8:** Dòng 20 — Dùng `<input type="submit">` là cách làm cũ, nên chuyển sang thẻ `<button>` để dễ tùy biến.
+   * **Sửa:** `<button type="submit">Gửi</button>`
+
+---
+* Nguồn tham chiếu:`07_forms_interactive.md: Mục Accessibility & Best Practices.`
