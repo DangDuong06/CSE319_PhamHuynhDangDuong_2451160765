@@ -140,3 +140,7 @@ Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
 * **Sai lệch quy trình nghiệp vụ :** Người dùng có thể lách luật để thực hiện các hành vi không cho phép, ví dụ như chuyển số tiền âm hoặc tạo tài khoản với thông tin không hợp lệ, gây tổn thất tài chính cho ngân hàng
 
 * Nguồn tham chiếu:`07_forms_interactive.md`: Mục HTML5 Validation Attributes & Best Practices.
+
+
+### PHẦN D:video:
+https://drive.google.com/file/d/1u_9z8Hs6OzVq_H6f6noM8Cq5uSVVmng1/view?usp=sharing
