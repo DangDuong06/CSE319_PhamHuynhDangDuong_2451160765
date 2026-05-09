@@ -84,3 +84,14 @@
 #### 4. Nếu Rule A thêm !important, element có màu gì? Tại sao?
 - **Trả lời**: Màu **Black**.
 - **Giải thích**: Từ khóa `!important` là mức ưu tiên cao nhất trong CSS (vô cực). Nó ghi đè lên tất cả các quy tắc thông thường, bao gồm cả Inline styles và ID selectors.
+
+
+### PHẦN B
+
+### Câu B1
+- 5 loại selector khác nhau:
+* Element Selector: body, header, footer
+* Class Selector: .navbar, .active, .skill-table.
+* ID Selector: #main-header.
+* Descendant Selector : .navbar a .
+* Pseudo-class: :hover, :nth-child(even).
