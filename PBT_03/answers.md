@@ -130,3 +130,23 @@
 ### 3. thay đổi thứ tự rules
 - không thay đổi
 - Trình duyệt ưu tiên dựa trên điểm số Specificity trước. Chỉ khi hai rule có điểm số bằng nhau hoàn toàn, trình duyệt mới xét đến quy tắc "Cái nào viết sau sẽ thắng" (Cascade). Vì các rule ở đây có điểm số khác nhau, nên thứ tự viết trước hay sau không làm thay đổi màu sắc cuối cùng của phần tử.
+
+
+### Câu C1
+### 1.tính chiều rộng thực tế
+* Sidebar: 300+20x2+1x2 = 342px
+* Content: 660+30x2+1x2 = 722px
+
+### 2.giải thích
+- Tổng chiều rộng thực tế của Sidebar và Content là: 342px + 722px = 1064px.
+- Trong khi đó, chiều rộng của lớp cha (Container) chỉ có 960px.
+- Kết luận: Vì 1064px > 960px, không gian của Container không đủ chứa cả hai phần tử nằm trên một hàng, dẫn đến việc khối Content bị đẩy xuống dòng mới.
+
+### 3. hai cách sửa lỗi
+* Cách 1: Sử dụng box-sizing: 
+- border-boxKhai báo thuộc tính này cho các phần tử để trình duyệt tự động tính toán lại kích thước lõi sao cho tổng kích thước không vượt quá width đã định.- Kết quả: Sidebar giữ nguyên 300px, Content giữ nguyên 660px. Tổng = 960px
+* Cách 2: Tính toán thủ công 
+- Chúng ta trừ trực tiếp phần Padding và Border ra khỏi thông số width ban đầu:
+- Width mới của Sidebar: 300 - (20x2) - (1x2) = 258px
+- Width mới của Content: 660 - (30x2) - (1x2) = 598px
+- Kiểm tra: (258+42) + (598+62) = 300 + 660 = 960px

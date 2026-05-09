@@ -1,0 +1,26 @@
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background: #eee;
+    overflow: hidden; /* Clear float */
+}
+
+/* Cách 1: Border-box */
+.fix-1 .sidebar, .fix-1 .content {
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid #ccc;
+}
+.fix-1 .sidebar { width: 300px; padding: 20px; background: #ffcccc; }
+.fix-1 .content { width: 660px; padding: 30px; background: #ccffcc; }
+
+/* Cách 2: Thủ công (content-box) */
+.fix-2 .sidebar-manual, .fix-2 .content-manual {
+    float: left;
+    border: 1px solid #ccc;
+    box-sizing: content-box; /* Ép về mặc định */
+}
+/* Width = 300 - 40 - 2 = 258 */
+.fix-2 .sidebar-manual { width: 258px; padding: 20px; background: #ffcccc; }
+/* Width = 660 - 60 - 2 = 598 */
+.fix-2 .content-manual { width: 598px; padding: 30px; background: #ccffcc; }
