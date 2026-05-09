@@ -39,3 +39,26 @@
 6. `article > p` → Chọn: **25.990.000đ**, **Mô tả sản phẩm...**, **45.990.000đ**, **Mô tả sản phẩm...** (Tất cả thẻ p là con trực tiếp của article).
 7. `a[href="/"]` → Chọn: **Home**
 8. `.top-bar.dark h1` → Chọn: **ShopTLU**
+
+### Câu A3 
+
+* tài liệu tham chiếu: **11_box_model.md**
+
+#### * Trường hợp 1: content-box *
+- **Chiều rộng hiển thị** = $400px (width) + 20px \times 2 (padding) + 5px \times 2 (border) = \mathbf{450px}$.
+- **Không gian chiếm trên trang** = $450px (chiều rộng hiển thị) + 10px \times 2 (margin) = \mathbf{470px}$.
+
+#### * Trường hợp 2: border-box *
+- **Chiều rộng hiển thị** = $\mathbf{400px}$ (Vì khi dùng `border-box`, chiều rộng thực tế luôn bằng giá trị `width` đã đặt).
+- **Kích thước content thực tế** = $400px - 20px \times 2 (padding) - 5px \times 2 (border) = \mathbf{350px}$.
+- **Không gian chiếm trên trang** = $400px (chiều rộng hiển thị) + 10px \times 2 (margin) = \mathbf{420px}$.
+
+#### * Trường hợp 3: Margin collapse *
+- **Khoảng cách giữa box-a và box-b** = $\mathbf{40px}$.
+- **Giải thích :** Theo hiện tượng **Margin Collapse**, khi hai thẻ block nằm chồng dọc, margin của chúng không cộng dồn mà sẽ gộp lại và lấy giá trị **lớn hơn** (giữa 25px và 40px thì 40px lớn hơn).
+
+---
+
+**Nâng cao:** Nếu `.box-a` có `margin-bottom: -10px` và `.box-b` có `margin-top: 40px`, khoảng cách = bao nhiêu?
+- **Trả lời:** Khoảng cách = $\mathbf{30px}$.
+- **Giải thích:** Khi có margin âm, trình duyệt sẽ lấy tổng đại số của margin dương lớn nhất và margin âm nhỏ nhất ($40px + (-10px) = 30px$).
