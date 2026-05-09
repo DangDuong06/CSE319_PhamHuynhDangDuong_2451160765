@@ -62,3 +62,25 @@
 **Nâng cao:** Nếu `.box-a` có `margin-bottom: -10px` và `.box-b` có `margin-top: 40px`, khoảng cách = bao nhiêu?
 - **Trả lời:** Khoảng cách = $\mathbf{30px}$.
 - **Giải thích:** Khi có margin âm, trình duyệt sẽ lấy tổng đại số của margin dương lớn nhất và margin âm nhỏ nhất ($40px + (-10px) = 30px$).
+
+### Câu A4 (5đ) — Specificity (Độ ưu tiên)
+
+* tài liệu tham chiếu: **09_css_selectors.md** và **10_inheritance_cascading.md**.
+
+#### 1. Tính specificity score (a, b, c) cho mỗi rule:
+- **Rule A (`p`)**: Score = **(0, 0, 1)** (Chỉ có 1 Tag selector).
+- **Rule B (`.price`)**: Score = **(0, 1, 0)** (Chỉ có 1 Class selector).
+- **Rule C (`#main-price`)**: Score = **(1, 0, 0)** (Chỉ có 1 ID selector).
+- **Rule D (`p.price`)**: Score = **(0, 1, 1)** (Gồm 1 Tag selector và 1 Class selector).
+
+#### 2. Element sẽ có màu gì? Giải thích:
+- **Trả lời**: Element sẽ có màu **Red**.
+- **Giải thích**: Theo bảng so sánh độ ưu tiên, ID selector (`#main-price`) có điểm số cao nhất (100) so với Class (10) và Tag (1). Rule nào có specificity score cao hơn sẽ thắng và áp dụng style lên phần tử.
+
+#### 3. Nếu thêm style="color: orange;", element có màu gì?
+- **Trả lời**: Màu **Orange**.
+- **Giải thích**: **Inline styles** (viết trực tiếp trong thẻ HTML) có độ ưu tiên là 1000, cao hơn tất cả các bộ chọn ID, Class hay Tag trong file CSS bên ngoài.
+
+#### 4. Nếu Rule A thêm !important, element có màu gì? Tại sao?
+- **Trả lời**: Màu **Black**.
+- **Giải thích**: Từ khóa `!important` là mức ưu tiên cao nhất trong CSS (vô cực). Nó ghi đè lên tất cả các quy tắc thông thường, bao gồm cả Inline styles và ID selectors.
