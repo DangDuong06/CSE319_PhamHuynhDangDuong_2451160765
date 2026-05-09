@@ -150,3 +150,31 @@
 - Width mới của Sidebar: 300 - (20x2) - (1x2) = 258px
 - Width mới của Content: 660 - (30x2) - (1x2) = 598px
 - Kiểm tra: (258+42) + (598+62) = 300 + 660 = 960px
+
+### Câu C2
+### 1. "Sản phẩm A" (h2)
+* font-size: 20px
+* color: green
+- font-size: Được quy định bởi rule .card .title { font-size: 20px; }.
+- color: Mặc dù có ID #featured .title (màu đỏ) trỏ vào, nhưng class .highlight có dùng !important. Trong CSS Cascade, !important là mạnh nhất, ghi đè lên mọi mức độ Specificity.
+
+### 2. "Mô tả sản phẩm" (p trong card featured)
+* color: blue
+- Phần tử <p> này có rule .card p { color: inherit; }.
+- inherit nghĩa là nó lấy màu từ phần tử cha trực tiếp của nó là .card.
+- Rule .card { color: blue; } đã thiết lập màu xanh cho cha, nên p kế thừa màu blue.
+
+### 3. "Sản phẩm B" (h2)
+* font-size: 20px
+* color: blue
+
+- font-size: Vẫn chịu tác động của rule .card .title { font-size: 20px; }.
+
+- color: Thẻ h2 này không có class .highlight và cũng không nằm trong #featured. Vì vậy, nó kế thừa màu từ tổ tiên gần nhất có quy định màu là .card { color: blue; }.
+
+### 4. "Mô tả sản phẩm B" (p.highlight)
+* color: green
+
+- Mặc dù có rule .card p { color: inherit; } (muốn lấy màu xanh từ cha), nhưng bản thân thẻ p này có class .highlight.
+
+- Rule .highlight { color: green !important; } trực tiếp tác động lên phần tử và có !important, nên nó thắng tuyệt đối.
