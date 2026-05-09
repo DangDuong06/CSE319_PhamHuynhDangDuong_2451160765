@@ -28,3 +28,14 @@
 ### câu hỏi thêm:
 - Inline CSS sẽ thắng.
 -Dựa trên quy tắc Specificity (Độ ưu tiên) trong tài liệu 09_css_selectors.md, Inline style có điểm ưu tiên là 1000, cao hơn hẳn so với Internal/External
+
+### Câu A2 — CSS Selectors 
+* nguồn tham chiếu : **09_css_selectors.md.**
+1. `h1` → Chọn: **ShopTLU**
+2. `.price` → Chọn: **25.990.000đ** và **45.990.000đ**
+3. `#app header` → Chọn: Toàn bộ nội dung trong thẻ `<header>` (ShopTLU và Nav).
+4. `nav a:first-child` → Chọn: **Home**
+5. `.product.featured h2` → Chọn: **MacBook Pro**
+6. `article > p` → Chọn: **25.990.000đ**, **Mô tả sản phẩm...**, **45.990.000đ**, **Mô tả sản phẩm...** (Tất cả thẻ p là con trực tiếp của article).
+7. `a[href="/"]` → Chọn: **Home**
+8. `.top-bar.dark h1` → Chọn: **ShopTLU**
