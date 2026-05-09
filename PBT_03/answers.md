@@ -108,3 +108,25 @@
 ### Phần 2: Layout 3 cột
 - Tổng chiều rộng 3 cột khi dùng border-box: 250px + 500px + 250px = 1000px (Vừa khít container).
 - Nếu không dùng border-box, tổng sẽ là 1100px và làm vỡ layout (cột sẽ bị đẩy xuống hàng dưới).
+
+### Câu B3
+
+### 1. danh sách 10 css ruler và specificity score
+- p (Màu grey) — Score: 0,0,1 (Chỉ có 1 Element selector).
+- body p (Màu silver) — Score: 0,0,2 (Kết hợp 2 Element selectors).
+- .text (Màu blue) — Score: 0,1,0 (Chỉ có 1 Class selector).
+- p.text (Màu orange) — Score: 0,1,1 (Kết hợp 1 Element và 1 Class).
+- .text.highlight (Màu green) — Score: 0,2,0 (Kết hợp 2 Class selectors).
+- p.text.highlight (Màu purple) — Score: 0,2,1 (Kết hợp 1 Element và 2 Classes).
+- #demo (Màu brown) — Score: 1,0,0 (Chỉ có 1 ID selector).
+- p#demo (Màu cyan) — Score: 1,0,1 (Kết hợp 1 ID và 1 Element).
+- #demo.text (Màu magenta) — Score: 1,1,0 (Kết hợp 1 ID và 1 Class).
+- p#demo.text.highlight (Màu red) — Score: 1,2,1 (Kết hợp 1 ID, 2 Classes và 1 Element).
+
+### 2. 
+- màu sắc cuối cùng hiển thị là màu đỏ (red)
+- Vì Rule số 10 có điểm Specificity cao nhất là 1,2,1. Theo quy tắc ưu tiên của CSS, ID ($1,0,0$) luôn mạnh hơn Class ($0,1,0$), và Class luôn mạnh hơn Element ($0,0,1$). Rule 10 hội tụ đầy đủ các thành phần mạnh nhất nên nó sẽ thắng tất cả các rule còn lại.
+
+### 3. thay đổi thứ tự rules
+- không thay đổi
+- Trình duyệt ưu tiên dựa trên điểm số Specificity trước. Chỉ khi hai rule có điểm số bằng nhau hoàn toàn, trình duyệt mới xét đến quy tắc "Cái nào viết sau sẽ thắng" (Cascade). Vì các rule ở đây có điểm số khác nhau, nên thứ tự viết trước hay sau không làm thay đổi màu sắc cuối cùng của phần tử.

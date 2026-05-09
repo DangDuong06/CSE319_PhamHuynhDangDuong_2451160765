@@ -1,0 +1,29 @@
+/* 1. Element Selector (0,0,1) */
+p { color: grey; }
+
+/* 2. Hai Element Selectors (0,0,2) */
+body p { color: silver; }
+
+/* 3. Class Selector (0,1,0) */
+.text { color: blue; }
+
+/* 4. Hai Class Selectors (0,2,0) */
+.text.highlight { color: green; }
+
+/* 5. Class + Element Selector (0,1,1) */
+p.text { color: orange; }
+
+/* 6. Hai Class + Element Selector (0,2,1) */
+p.text.highlight { color: purple; }
+
+/* 7. ID Selector (1,0,0) */
+#demo { color: brown; }
+
+/* 8. ID + Element Selector (1,0,1) */
+p#demo { color: cyan; }
+
+/* 9. ID + Class Selector (1,1,0) */
+#demo.text { color: magenta; }
+
+/* 10. ID + 2 Classes + Element (1,2,1) */
+p#demo.text.highlight { color: red; }
