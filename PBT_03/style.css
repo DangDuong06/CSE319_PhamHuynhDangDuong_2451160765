@@ -1,0 +1,84 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+header {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none; 
+    color: #ccc;          
+    margin-right: 15px;
+}
+
+
+.navbar a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+.navbar a.active {
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+
+.skill-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.skill-table th, .skill-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+
+.skill-table thead tr {
+    background-color: #2c3e50;
+    color: white;
+}
+
+
+.skill-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.skill-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
