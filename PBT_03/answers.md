@@ -23,3 +23,8 @@
 - **Ví dụ:**
 ```html
 <link rel="stylesheet" href="styles.css">
+
+```
+### câu hỏi thêm:
+- Inline CSS sẽ thắng.
+-Dựa trên quy tắc Specificity (Độ ưu tiên) trong tài liệu 09_css_selectors.md, Inline style có điểm ưu tiên là 1000, cao hơn hẳn so với Internal/External
