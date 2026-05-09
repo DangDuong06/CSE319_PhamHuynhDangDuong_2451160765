@@ -95,3 +95,16 @@
 * ID Selector: #main-header.
 * Descendant Selector : .navbar a .
 * Pseudo-class: :hover, :nth-child(even).
+
+
+### Câu B2
+
+### Phần 1: Chứng minh content-box vs border-box
+- **Hộp 1 (content-box):** Chiều rộng thực tế đo được là ~350px. 
+  (Giải thích: Chiều rộng thực tế = width + padding + border).
+- **Hộp 2 (border-box):** Chiều rộng thực tế đo được là 300px. 
+  
+
+### Phần 2: Layout 3 cột
+- Tổng chiều rộng 3 cột khi dùng border-box: 250px + 500px + 250px = 1000px (Vừa khít container).
+- Nếu không dùng border-box, tổng sẽ là 1100px và làm vỡ layout (cột sẽ bị đẩy xuống hàng dưới).
