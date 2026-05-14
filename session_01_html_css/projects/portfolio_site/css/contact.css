@@ -48,3 +48,9 @@
 .submit-btn:hover {
     background-color: #4f46e5;
 }
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column; /* Stacked on mobile */
+    }
+}
