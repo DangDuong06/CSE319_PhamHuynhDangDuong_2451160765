@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs by lacie</title>
+    <a href="index.html"></a>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-pastel: #f7f3ee;      
+            --pink-pastel: #e6c5b8;    
+            --text-dark: #4a443f;      
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        
+        .card {
+            border: none !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px; 
+            z-index: 1;
+        }
+        
+        .btn-lacie {
+            background-color: var(--pink-pastel);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .btn-lacie:hover {
+            background-color: #d1b0a4;
+            color: white;
+        }
+        .badge-lacie {
+            background-color: var(--bg-pastel);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand font-serif italic fs-3 text-lowercase" href="#">designs by lacie</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto align-items-center">
+                    <a class="nav-link mx-2" href="#">Home</a>
+                    <a class="nav-link mx-2" href="#">About</a>
+                    <a class="nav-link mx-2 active" href="#">Blog</a>
+                    <a class="nav-link mx-2" href="#">Portfolio</a>
+                    <a href="#" class="btn btn-lacie px-4 py-2 ms-2 text-uppercase btn-sm" style="font-size: 0.8rem; letter-spacing: 1px;">Let's Chat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="blog" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-lg-8">
+                    <h2 class="font-serif display-5 mb-4 italic">Latest Journal</h2>
+                    
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Branding Concept" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge badge-lacie px-3 py-2 text-uppercase fs-7">Branding</span>
+                            <h3 class="card-title mt-2 fw-normal">Understanding Your Brand Identity</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • May 15, 2026 • 4 min read</small>
+                            </p>
+                            <p class="card-text text-muted">A deep dive into how choosing the right color palettes and typography can connect your small business emotionally with your ideal clients.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Design Process" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge bg-dark text-white px-3 py-2 text-uppercase fs-7">Web Design</span>
+                            <h3 class="card-title mt-2 fw-normal">Minimalist Layouts That Convert</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • May 10, 2026 • 6 min read</small>
+                            </p>
+                            <p class="card-text text-muted">Why white space and clean grids are your best friends when designing an online portfolio that leaves a lasting impression.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Photography Tips" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge badge-lacie px-3 py-2 text-uppercase fs-7">Lifestyle</span>
+                            <h3 class="card-title mt-2 fw-normal">Behind The Scenes of Creative Direction</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • Apr 28, 2026 • 5 min read</small>
+                            </p>
+                            <p class="card-text text-muted">Step into my studio and see the mood boards, rough sketches, and iterations that lead to final designs for our clients.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                
+        </div>
+    </section>
+
+    <footer class="bg-light text-center py-4 border-top">
+        <p class="mb-0 text-muted small">&copy; 2026 Designs by Lacie. Crafted with Bootstrap.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
