@@ -1,0 +1,68 @@
+/* ==========================================================================
+   BOOSTRAP 5 THEME CUSTOMIZATION - DESIGNS BY LACIE
+   ========================================================================== */
+
+:root {
+    /* Thay đổi bảng màu mặc định của hệ thống */
+    --bs-primary: #e6c5b8;       /* Màu chính (Primary) đổi thành Hồng Cam Pastel thay vì màu xanh */
+    --bs-body-bg: #ffffff;
+    --bs-body-font-family: 'Plus Jakarta Sans', sans-serif;
+    
+    /* Biến màu bổ sung đặc trưng cho giao diện Lacie */
+    --bg-pastel-theme: #f7f3ee;  /* Nền kem nhạt quý phái */
+    --text-custom-dark: #4a443f; /* Màu chữ nâu trầm */
+}
+
+body {
+    color: var(--text-custom-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ghi đè Font Serif cho toàn bộ tiêu đề h1->h6 thay vì dùng font mặc định */
+h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif !important;
+}
+
+/* Tùy biến loại bỏ hoàn toàn bo góc (Border Radius = 0) theo tinh thần phẳng, tối giản */
+.btn, .card, .form-control, .badge {
+    border-radius: 0px !important;
+}
+
+/* Style riêng cho nút Let's Chat */
+.btn-lacie-primary {
+    background-color: var(--bs-primary);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-lacie-primary:hover {
+    background-color: #d1b0a4;
+    color: white;
+}
+
+/* Định dạng lưới ảnh vuông Instagram tỉ lệ 1:1 */
+.gallery-item-square {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    filter: grayscale(15%);
+    transition: transform 0.4s ease;
+}
+.gallery-item-square:hover {
+    transform: scale(1.02);
+}
+
+/* Custom link footer mềm mại */
+.footer-link {
+    color: #7a736d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.footer-link:hover {
+    color: var(--bs-primary);
+}
