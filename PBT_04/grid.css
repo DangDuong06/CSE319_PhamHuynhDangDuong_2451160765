@@ -1,0 +1,217 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* --- Layout chính sử dụng CSS Grid --- */
+.grid-layout {
+    display: grid;
+    /* Cột theo yêu cầu: 200px - 1fr - 200px */
+    grid-template-columns: 200px 1fr 200px;
+    /* Khoảng cách giữa các vùng (gap) */
+    gap: 15px; 
+    
+    /* Nâng cao (Bonus 5đ): Sử dụng grid-template-areas */
+    grid-template-areas: 
+        "header  header  header"
+        "hero    hero    hero"
+        "sidebar main    ads"
+        "footer  footer  footer";
+    
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Định vị các vùng theo Area đã đặt tên --- */
+.header {
+    grid-area: header;
+    background-color: #1e293b;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.hero-banner {
+    grid-area: hero;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+/* Giao diện checkbox giả lập cho Sidebar */
+.filter-group {
+    margin-top: 15px;
+}
+.filter-group h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.sidebar label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* --- Vùng Main Content (Grid con chứa sản phẩm) --- */
+.main-content {
+    grid-area: main;
+    display: grid;
+    /* Yêu cầu: 3 cột cho product cards và dùng minmax() khi resize */
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.ads {
+    grid-area: ads;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+/* Banner quảng cáo placeholder */
+.ads-banner {
+    background-color: #fef3c7;
+    border: 2px dashed #f59e0b;
+    color: #b45309;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* --- Thiết kế Product Card --- */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-img {
+    background-color: #f1f5f9;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-card h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #ef4444;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.product-card button:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- Nâng cao (Bonus 5đ): Card nổi bật chiếm 2 cột --- */
+.product-card.featured {
+    grid-column: span 2; /* Chiếm diện tích 2 cột */
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.product-card.featured .card-img {
+    background-color: #dbeafe;
+}
+
+.featured .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ef4444;
+    color: white;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "hero"
+            "sidebar"
+            "main"
+            "ads"
+            "footer";
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card.featured {
+        grid-column: span 1;
+    }
+}
