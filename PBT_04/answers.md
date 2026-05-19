@@ -62,3 +62,31 @@ Bên trong từng cột thông tin, sử dụng Flexbox với thuộc tính flex
 Lựa chọn: Flexbox
 
 Giải thích: Card sản phẩm là một layout một chiều theo trục dọc (flex-direction: column;). Để giải quyết bài toán "nút luôn dính đáy" khi phần text ở giữa dài ngắn không đều, chỉ cần đặt margin-top: auto; cho phần tử nút bấm. Flexbox sẽ tự động đẩy nút xuống sát mép dưới cùng của card.
+
+
+### Câu C2
+Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+1. Nguyên nhân
+Mặc dù các phần tử .card nằm trong một hàng có chiều cao bằng nhau (nhờ cơ chế tự động của Flexbox cha .card-container), nhưng bản thân bên trong mỗi .card lại chưa được cấu hình là một Flexbox.
+Khi tiêu đề h3 hoặc đoạn mô tả của các card có độ dài ngắn khác nhau, phần không gian trống bên trong card bị lệch, dẫn đến việc các nút .btn không có điểm tựa cố định và bị đẩy nhảy lên xuống tự do theo độ dài của chữ.
+
+2. Giải pháp & Code sửa
+Biến bản thân .card thành một Flex container theo chiều dọc (flex-direction: column). Sau đó, sử dụng thuộc tính margin-top: auto cho nút .btn để tận dụng khoảng trống còn thừa, ép nút luôn nằm sát đáy card.
+
+Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+1. Nguyên nhân
+Khi khai báo display: flex; cho .hero, các phần tử con bên trong mặc định sẽ xếp theo hàng ngang và nằm ở góc trên bên trái.
+Thuộc tính text-align: center; viết trong .hero-content chỉ có tác dụng căn giữa các phần tử dạng văn bản (inline/inline-block) bên trong chính nó, chứ hoàn toàn không thể tự căn giữa khối .hero-content so với khung cha .hero.
+
+2. Giải pháp & Code sửa
+Sử dụng bộ đôi thuộc tính căn chỉnh của Flexbox trực tiếp lên container cha .hero: justify-content: center để căn giữa theo chiều ngang và align-items: center để căn giữa theo chiều dọc.
+
+Lỗi 3: Sidebar bị co lại khi content quá dài
+1. Nguyên nhân
+Theo cơ chế mặc định của Flexbox, thuộc tính flex-shrink của các item có giá trị mặc định là 1. Điều này có nghĩa là khi vùng không gian hiển thị bị thiếu (do nội dung bên khối .content quá dài hoặc khi thu nhỏ màn hình), các item sẽ tự động co hẹp lại để vừa với container chung.
+Vì vậy, dù bạn đã đặt width: 250px; cho .sidebar, nó vẫn bị bóp nghẹt và co lại nhỏ hơn kích thước mong muốn.
+
+2. Giải pháp & Code sửa
+Có hai cách sửa lỗi này bằng cách can thiệp vào cơ chế co giãn của Flexbox:
+Cách 1 (Khuyên dùng): Đặt thuộc tính flex-shrink: 0; cho .sidebar để ra lệnh tuyệt đối không cho phép nó bị co lại dưới bất kỳ tình huống nào.
+Cách 2: Thay vì dùng width, hãy dùng thuộc tính chuyên dụng của flex là flex-basis: 250px; hoặc ép cứng kích thước tối thiểu bằng min-width: 250px;.

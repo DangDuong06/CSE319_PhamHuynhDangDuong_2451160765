@@ -42,7 +42,7 @@ body {
 
 .nav-menu a:hover {
     color: #1e90ff;
-    border-bottom: 2px solid #1e90ff; /* Hiệu ứng gạch chân đổi màu khi hover */
+    border-bottom: 2px solid #1e90ff;
 }
 
 .nav-auth {
@@ -167,4 +167,32 @@ body {
 @media (max-width: 576px) {
     
     .card-item { flex: 0 0 100%; }
+}
+.card-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.card { 
+    width: 30%; 
+    margin: 1.5%; 
+    
+   
+    display: flex;
+    flex-direction: column;
+}
+
+.card img { 
+    width: 100%; 
+}
+
+.card h3 { 
+    font-size: 18px; 
+}
+
+.card .btn { 
+    padding: 10px; 
+    
+    
+    margin-top: auto; 
 }
