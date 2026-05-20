@@ -68,3 +68,8 @@
 - số lượng cột : 4 hoặc 6 cột
 
 ### Câu A3
+- 375px (iPhone SE)	100%
+- 600px	            540px
+- 800px	            720px
+- 1000px	        960px
+- 1400px	        1140px
