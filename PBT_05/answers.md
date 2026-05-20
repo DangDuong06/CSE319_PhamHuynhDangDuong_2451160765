@@ -73,3 +73,41 @@
 - 800px	            720px
 - 1000px	        960px
 - 1400px	        1140px
+
+### Câu A4
+### 1. Variables
+- Cho phép đặt tên và lưu trữ các giá trị được sử dụng lặp đi lặp lại nhiều lần (màu sắc chủ đạo, font chữ, khoảng cách padding,...) vào một nơi tập trung để dễ dàng cập nhật đồng loạt khi cần.
+- ví dụ:
+```html
+$color-primary: #3498db;
+.button { background-color: $color-primary; }
+```
+- Nesting (Cấu trúc lồng nhau): Hỗ trợ viết các bộ chọn CSS lồng trực tiếp vào nhau theo đúng sơ đồ phả hệ cây cấu trúc HTML. Việc này giúp mã nguồn gọn gàng, giảm thiểu viết lặp tên class cha.
+- ví dụ:
+```html
+.navbar {
+  background: #333;
+  .nav-item { display: inline-block; }
+}
+```
+- Mixins (Đoạn mã tái sử dụng): Hoạt động giống như các hàm chức năng, cho phép định nghĩa sẵn một tập hợp nhiều thuộc tính CSS phức tạp (có thể truyền thêm các tham số đầu vào linh hoạt) rồi nhúng nhanh vào các class khác bằng từ khóa @include.
+- ví dụ:
+```html
+@mixin center-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box { @include center-element; }
+```
+
+- @extend / Inheritance (Tính kế thừa): Cho phép một bộ chọn chiếm dụng và thừa hưởng lại toàn bộ tất cả các thuộc tính CSS đã được định nghĩa của một bộ chọn khác trước đó, hạn chế mã nguồn bị trùng lặp.
+- ví dụ:
+```html
+.message-box { border: 1px solid #ccc; padding: 10px; }
+.error-box { @extend .message-box; border-color: red; }
+```
+## 2.
+- Lý do: Các trình duyệt hiện đại (Chrome, Edge, Firefox,...) chỉ tích hợp bộ thông dịch hiểu được cú pháp chuẩn hóa của ngôn ngữ CSS thông thường. Các cú pháp nâng cao của SCSS (biến, lồng nhau, hàm mixin,...) không nằm trong quy chuẩn này.
+
+- Quy trình chuyển đổi: Chúng ta bắt buộc phải sử dụng một công cụ biên dịch (Compiler) chuyên dụng của hệ sinh thái Sass (chẳng hạn như thư viện Sass chạy trên Node.js hoặc thông qua Extension Live Sass Compiler của VS Code) để quét và biên dịch (compile) toàn bộ logic trong file .scss đầu vào để xuất bản ra thành một file .css thuần túy. Sau đó, ta mới nhúng file .css này vào mã nguồn HTML bằng thẻ <link>.
