@@ -126,3 +126,14 @@
 - Tailwind CSS: Có 2 cách chính để tái sử dụng:
 - Cách 1 (Khuyên dùng trong dự án thực tế): Tách component ở tầng Framework (React, Vue, Blade, Components tĩnh) rồi gọi lại thẻ đó.
 - Cách 2 (Sử dụng @apply trong file CSS): Gom các utility classes lại thành một class tùy biến
+
+### Bài C2
+2. Giải thích Tailwind PurgeCSS (Tailwind JIT)
+- Cơ chế hoạt động: Tailwind sử dụng cơ chế JIT (Just-In-Time) compiler. Trình biên dịch sẽ quét toàn bộ các file code của bạn (HTML, JS, JSX,...) để xem bạn thực tế đang gõ những class Tailwind nào.
+- Nó loại bỏ gì? Nó sẽ loại bỏ 100% các class tiện ích có trong thư viện gốc của Tailwind mà bạn KHÔNG dùng tới trong code. File CSS xuất ra cuối cùng chỉ chứa đúng và đủ những class thực sự xuất hiện trên giao diện của bạn, giúp tối ưu hóa hiệu năng tải trang ở mức tối đa.
+
+3. Khi nào không nên dùng TailwindCSS? 
+* Tình huống 1: Khi xây dựng các website/blog có nội dung động từ Markdown hoặc CMS (Rich Text)
+- Lý do: Nội dung được đổ ra từ database dưới dạng thẻ HTML thô `(Ví dụ: <h1>, <p>, <ul>) không chứa sẵn các class của Tailwind, khiến văn bản bị mất hết format (vì Tailwind reset toàn bộ style mặc định)`. Lúc này dùng CSS thuần hoặc plugin @tailwindcss/typography (prose) sẽ tiện hơn rất nhiều.
+* Tình huống 2: Khi làm việc với đối tượng khách hàng hoặc team dev cũ, chỉ quen bàn giao sản phẩm bằng file CSS cấu trúc truyền thống
+- Lý do: Nếu đội ngũ Backend hoặc đối tác không có môi trường Node.js/Build tools (Webpack, Vite) để chạy JIT compiler cho Tailwind, hoặc họ chỉ muốn sửa giao diện trực tiếp bằng cách sửa file CSS riêng, việc bàn giao một file HTML chằng chịt class Tailwind sẽ trở thành "ác mộng" bảo trì đối với họ.
