@@ -40,3 +40,31 @@
 * Xu hướng người dùng: Lượng truy cập web từ thiết bị di động hiện nay đã vượt trội so với desktop.
 
 * Tư duy thiết kế gọn gàng: Ép nhà phát triển phải chắt lọc những nội dung cốt lõi nhất lên màn hình nhỏ trước, tránh tình trạng "tham lam" nhồi nhét giao diện.
+
+### Câu A2:
+### Extra Small (xs)
+- kích thước : < 576px
+- thiết bị đại diện :Điện thoại di động ở trạng thái xoay dọc
+- số lượng cột : 1 cột
+### Small (sm)
+- kích thước : ≥ 576px
+- thiết bị đại diện :Điện thoại di động ở trạng thái xoay ngang
+- số lượng cột : 2 cột
+### Medium (md)
+- kích thước :≥ 768px
+- thiết bị đại diện :Máy tính bảng ở trạng thái xoay dọc (iPad,...)
+- số lượng cột : 2 hoặc 3 cột
+### Large (lg)
+- kích thước :≥ 992px
+- thiết bị đại diện :Máy tính bảng xoay ngang hoặc Laptop nhỏ
+- số lượng cột : 3 hoặc 4 cộct
+### Extra Large (xl)
+- kích thước :≥ 1200px
+- thiết bị đại diện :Màn hình máy tính Desktop thông thường
+- số lượng cột : 4 cột
+### XX Large (xxl)
+- kích thước :≥ 1200px
+- thiết bị đại diện :Màn hình PC kích thước lớn, Màn hình Ultra-wide
+- số lượng cột : 4 hoặc 6 cột
+
+### Câu A3
