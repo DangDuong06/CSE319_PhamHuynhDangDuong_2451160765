@@ -108,3 +108,21 @@
 - Class Tailwind tương đương sẽ là: hidden md:flexhidden 
 `$\rightarrow$ Ẩn hoàn toàn trên thiết bị mặc định (Mobile dưới 768px) giống như display: none.`
 `md:flex $\rightarrow$ Kích hoạt display: flex khi màn hình đạt từ breakpoint md (min-width: 768px) trở lên.`
+
+### Phần C
+### Bài C1
+1. HTML file size (CSS thuần vs Tailwind HTML)
+- CSS thuần: Dung lượng file HTML nhỏ hơn rất nhiều. Lý do là thẻ HTML chỉ chứa cấu trúc cơ bản và các tên class ngắn gọn (Ví dụ: class="product-card"). Toàn bộ gánh nặng dung lượng được chuyển sang file .css tách biệt.
+- Tailwind CSS: Dung lượng file HTML phình to hơn đáng kể. Do sử dụng tư duy Utility-first, một thẻ có thể phải gánh hàng chục class tiện ích (Ví dụ: class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-slate-200 overflow-hidden flex flex-col").
+
+2. Maintainability (Dễ đọc? Dễ sửa?)
+- Tính dễ đọc: * CSS thuần dễ đọc cấu trúc HTML hơn vì nó sạch sẽ.
+- Tailwind ban đầu gây hoa mắt vì "rác" class (class soup), nhưng lại giúp người đọc biết ngay thuộc tính CSS của element đó mà không cần phải nhảy qua nhảy lại giữa file HTML và file CSS.
+- Tính dễ sửa:
+- Tailwind vượt trội hơn khi sửa cục bộ: Sửa phần tử nào chỉ cần can thiệp đúng class của phần tử đó trong HTML, hoàn toàn không sợ làm ảnh hưởng hay phá vỡ giao diện của các component khác (bản chất của CSS thuần nếu viết class chung rất dễ bị hiệu ứng domino - sửa chỗ này hỏng chỗ kia).
+
+3. Reusability (Dùng lại thế nào? @apply?)
+- CSS thuần: Tái sử dụng bằng cách gọi lại tên class (Ví dụ: .product-card) ở bất kỳ đâu trong dự án.
+- Tailwind CSS: Có 2 cách chính để tái sử dụng:
+- Cách 1 (Khuyên dùng trong dự án thực tế): Tách component ở tầng Framework (React, Vue, Blade, Components tĩnh) rồi gọi lại thẻ đó.
+- Cách 2 (Sử dụng @apply trong file CSS): Gom các utility classes lại thành một class tùy biến
