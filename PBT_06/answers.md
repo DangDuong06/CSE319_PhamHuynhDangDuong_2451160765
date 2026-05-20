@@ -89,4 +89,22 @@
 5. `Thẻ vị trí công việc (<p>)text-sm $\rightarrow$ Cỡ chữ nhỏ font-size: 0.875rem (14px) kèm line-height: 1.25remtext-gray-500 $\rightarrow$ Màu chữ xám vừa (color mã #6b7280)`
 6. `Thẻ nút bấm (<button>)px-4 $\rightarrow$ Padding trái và phải padding-left: 1rem; padding-right: 1rem;py-2 $\rightarrow$ Padding trên và dưới padding-top: 0.5rem; padding-bottom: 0.5rem;bg-blue-500 $\rightarrow$ Màu nền xanh dương (background-color: #3b82f6)text-white $\rightarrow$ Màu chữ trắng (color: #ffffff)rounded-md $\rightarrow$ Bo góc vừa phải (border-radius: 0.375rem (6px))hover:bg-blue-600 $\rightarrow$ Đổi màu nền xanh đậm hơn khi di chuột qua (background-color: #2563eb)focus:ring-2 $\rightarrow$ Hiển thị vòng ring viền dày 2px bao quanh nút khi được focus (box-shadow)focus:ring-blue-300 $\rightarrow$ Màu của vòng ring focus là xanh dương nhạt (#93c5fd)`
 
+### Câu A2
+1. Giải thích prefix responsive:
+- md:, lg:, xl: là các Breakpoint Modifiers dựa trên Mobile-first. Nó tương ứng với các truy vấn phương tiện (@media) với kích thước màn hình tối thiểu (min-width).
+- md: áp dụng từ màn hình từ 768px trở lên.
+- lg: áp dụng từ màn hình từ 1024px trở lên.
+- xl: áp dụng từ màn hình từ 1280px trở lên.
+* Ví dụ md:grid-cols-2 lg:grid-cols-4 nghĩa là: * Trên giao diện màn hình Tablet/máy tính nhỏ (từ 768px đến 1023px), lưới (grid) sẽ hiển thị 2 cột.
+- Khi màn hình đạt kích thước Desktop (từ 1024px trở lên), lưới (grid) sẽ tự động chuyển sang hiển thị 4 cột.
 
+2. Giải thích state modifiers:
+- hover: Trạng thái khi người dùng di chuột (con trỏ chuột) lên trên phần tử (:hover).
+- focus: Trạng thái khi phần tử đang được chọn hoặc kích hoạt (ví dụ: click vào ô input, dùng phím Tab di chuyển đến button) (:focus).
+- active: Trạng thái ngay tại thời điểm người dùng đang nhấn giữ chuột vào phần tử (:active).
+- group-hover: Trạng thái thay đổi phong cách của một phần tử con dựa trên hành động hover vào một phần tử cha (Phần tử cha phải được gắn class group, khi hover vào cha thì thằng con mang class group-hover:... mới được kích hoạt).
+
+3. Viết class Tailwind cho: "Ẩn trên mobile, hiện dạng flex trên tablet trở lên"
+- Class Tailwind tương đương sẽ là: hidden md:flexhidden 
+`$\rightarrow$ Ẩn hoàn toàn trên thiết bị mặc định (Mobile dưới 768px) giống như display: none.`
+`md:flex $\rightarrow$ Kích hoạt display: flex khi màn hình đạt từ breakpoint md (min-width: 768px) trở lên.`
