@@ -77,3 +77,16 @@
 - Dự án đòi hỏi tính sáng tạo nghệ thuật cao, giao diện độc quyền, độc lạ (Creative Agency, Portfolio nghệ thuật, Web giới thiệu game bom tấn...).
 - Cần tối ưu dung lượng tải trang ở mức cực đoan (Micro-optimization). Bootstrap chứa rất nhiều CSS dư thừa nếu bạn chỉ xài một vài component của nó (dù có thể tối ưu bằng PurgeCSS nhưng vẫn cồng kềnh hơn CSS viết tay vừa vặn).
 - Khi bạn đang trong quá trình học nền tảng HTML/CSS; lạm dụng Bootstrap quá sớm sẽ khiến bạn bị hổng tư duy về Box Model, Flexbox, Grid và cách hoạt động thực sự của CSS responsive.
+
+
+### TRACK B
+### PHẦN A — ĐỌC HIỂU 
+#### Câu A1 
+1. `Thẻ cha ngoài cùng (<div>)flex $\rightarrow$ display: flexitems-center $\rightarrow$ align-items: centerjustify-between $\rightarrow$ justify-content: space-betweenp-4 $\rightarrow$ padding: 1rem (16px)bg-white $\rightarrow$ background-color: #ffffffshadow-md $\rightarrow$ Thiết lập đổ bóng mức độ trung bình (box-shadow)rounded-lg $\rightarrow$ Bo góc lớn (border-radius: 0.5rem (8px))hover:shadow-xl $\rightarrow$ Thay đổi bóng đổ lớn hơn khi di chuột qua (box-shadow lớn hơn)transition-shadow $\rightarrow$ Chỉ áp dụng hiệu ứng chuyển động mượt cho thuộc tính box-shadowduration-300 $\rightarrow$ Thời gian của hiệu ứng transition kéo dài 300ms`
+2. ` Thẻ ảnh đại diện (<img>)w-16 $\rightarrow$ Chiều rộng width: 4rem (64px)h-16 $\rightarrow$ Chiều cao height: 4rem (64px)rounded-full $\rightarrow$ Bo tròn tuyệt đối thành hình vòng tròn (border-radius: 9999px)object-cover $\rightarrow$ object-fit: cover (Ảnh tự động co dãn lấp đầy khung mà không bị méo tỉ lệ)`
+3. `Thẻ bọc thông tin văn bản (<div> ở giữa)ml-4 $\rightarrow$ Khoảng cách lề bên trái margin-left: 1rem (16px)flex-1 $\rightarrow$ flex: 1 1 0% (Cho phép phần tử tự co dãn chiếm toàn bộ khoảng trống còn lại)`
+4. `Thẻ tên người dùng (<h3>)text-lg $\rightarrow$ Cỡ chữ lớn font-size: 1.125rem (18px) kèm line-height: 1.75remfont-semibold $\rightarrow$ Độ dày chữ hơi đậm font-weight: 600text-gray-800 $\rightarrow$ Màu chữ xám đậm (color mã #1f2937)truncate $\rightarrow$ Ẩn phần chữ dư thừa bằng dấu 3 chấm nếu text quá dài (overflow: hidden; text-overflow: ellipsis; white-space: nowrap;)`
+5. `Thẻ vị trí công việc (<p>)text-sm $\rightarrow$ Cỡ chữ nhỏ font-size: 0.875rem (14px) kèm line-height: 1.25remtext-gray-500 $\rightarrow$ Màu chữ xám vừa (color mã #6b7280)`
+6. `Thẻ nút bấm (<button>)px-4 $\rightarrow$ Padding trái và phải padding-left: 1rem; padding-right: 1rem;py-2 $\rightarrow$ Padding trên và dưới padding-top: 0.5rem; padding-bottom: 0.5rem;bg-blue-500 $\rightarrow$ Màu nền xanh dương (background-color: #3b82f6)text-white $\rightarrow$ Màu chữ trắng (color: #ffffff)rounded-md $\rightarrow$ Bo góc vừa phải (border-radius: 0.375rem (6px))hover:bg-blue-600 $\rightarrow$ Đổi màu nền xanh đậm hơn khi di chuột qua (background-color: #2563eb)focus:ring-2 $\rightarrow$ Hiển thị vòng ring viền dày 2px bao quanh nút khi được focus (box-shadow)focus:ring-blue-300 $\rightarrow$ Màu của vòng ring focus là xanh dương nhạt (#93c5fd)`
+
+
