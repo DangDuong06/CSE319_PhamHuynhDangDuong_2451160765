@@ -56,3 +56,24 @@
 - Trạng thái tương tác bị lỗi: Khi bạn override background: red;, các hiệu ứng khi di chuột (:hover), click giữ (:active), hay chọn (:focus) của nút bấm sẽ không tự động đổi sắc độ đậm/nhạt theo màu đỏ mới, dẫn đến trải nghiệm người dùng kém tự nhiên.
 
 - Khó bảo trì (Maintainability): Khi dự án lớn lên, việc tìm và sửa các đoạn CSS override thủ công rất mất thời gian, dễ gây xung đột độ ưu tiên selector (specificity). Sử dụng SASS variables giúp quản lý toàn bộ theme của website tập trung tại một nơi duy nhất.
+
+### Bài C2:
+## 1.CSS thuần (Vanilla CSS)
+- Số dòng CSS cần viết: Rất nhiều (Khoảng 80 - 150 dòng). Phải tự định nghĩa từ container, flexbox/grid layout, các thuộc tính typography, box-shadow, bo góc, viết các @media screen để xử lý responsive riêng cho cả navbar và card.
+- Thời gian phát triển: Chậm. Tốn nhiều thời gian thiết kế cấu trúc layout, căn chỉnh padding/margin, và debug lỗi hiển thị vỡ khung trên các kích thước màn hình hoặc trình duyệt khác nhau.
+- Khả năng tùy biến: Tối đa (100%). Bạn hoàn toàn làm chủ mọi pixel, có thể tạo ra bất kỳ hiệu ứng độc lạ hay layout phá cách nào theo đúng ý đồ thiết kế mà không bị ràng buộc.
+
+## 2.Bootstrap Version
+- Số dòng CSS cần viết: Gần như bằng 0. 100% sử dụng các class tiện ích có sẵn như d-flex, col-*, card, navbar-expand-lg.
+- Thời gian phát triển: Cực kỳ nhanh. Chỉ cần lắp ghép các class component và utility theo tài liệu hướng dẫn. Giảm đến 70-80% thời gian code giao diện thô.
+- Khả năng tùy biến: Bị giới hạn trong bộ khung. Nếu muốn tùy biến sâu ngoài các cấu hình mặc định, bắt buộc phải hiểu sâu về SASS variables hoặc viết đè CSS, nếu không giao diện sẽ trông đại trà ("mùi Bootstrap").
+
+### Nên dùng Bootstrap khi:
+- Cần phát triển nhanh các dự án thương mại điện tử, landing page tiêu chuẩn hoặc các trang quản trị (Admin Dashboard) nơi cấu trúc giao diện đi theo phom chuẩn hóa, đề cao tính mạch lạc.
+- Làm việc trong các dự án mẫu (Prototype), MVP (sản phẩm khả thi tối thiểu) cần ra mắt thị trường trong thời gian ngắn để thử nghiệm.
+- Đội ngũ phát triển mạnh về Backend, cần một framework hỗ trợ sẵn UI vững chắc, responsive tốt mà không cần chuyên sâu về thiết kế CSS.
+
+### Không nên dùng Bootstrap khi:
+- Dự án đòi hỏi tính sáng tạo nghệ thuật cao, giao diện độc quyền, độc lạ (Creative Agency, Portfolio nghệ thuật, Web giới thiệu game bom tấn...).
+- Cần tối ưu dung lượng tải trang ở mức cực đoan (Micro-optimization). Bootstrap chứa rất nhiều CSS dư thừa nếu bạn chỉ xài một vài component của nó (dù có thể tối ưu bằng PurgeCSS nhưng vẫn cồng kềnh hơn CSS viết tay vừa vặn).
+- Khi bạn đang trong quá trình học nền tảng HTML/CSS; lạm dụng Bootstrap quá sớm sẽ khiến bạn bị hổng tư duy về Box Model, Flexbox, Grid và cách hoạt động thực sự của CSS responsive.
