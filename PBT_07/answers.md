@@ -202,3 +202,85 @@ Nên dùng `===` trong hầu hết trường hợp.
 Lý do: `===` không tự ép kiểu nên kết quả rõ ràng, dễ dự đoán và tránh lỗi logic bất ngờ. Chỉ nên dùng `==` khi thật sự hiểu rõ quy tắc ép kiểu và có mục đích cụ thể.
 
 ---
+
+## Câu A4 — Truthy & Falsy
+
+### Tất cả giá trị Falsy phổ biến trong JavaScript
+
+Các giá trị sau khi đặt trong điều kiện sẽ được xem là `false`:
+
+```javascript
+false
+0
+-0
+0n
+""
+null
+undefined
+NaN
+document.all // trường hợp đặc biệt trong browser
+```
+
+Ghi chú: `document.all` là trường hợp đặc biệt trong trình duyệt, ít dùng trong bài tập cơ bản. Ngoài các giá trị trên, hầu hết giá trị còn lại đều là Truthy.
+
+### Dự đoán kết quả
+
+```javascript
+if ("0") console.log("A");
+```
+
+**Có in.** Chuỗi `"0"` không rỗng nên là truthy.
+
+```javascript
+if ("") console.log("B");
+```
+
+**Không in.** Chuỗi rỗng là falsy.
+
+```javascript
+if ([]) console.log("C");
+```
+
+**Có in.** Mảng rỗng vẫn là object, mà object là truthy.
+
+```javascript
+if ({}) console.log("D");
+```
+
+**Có in.** Object rỗng là truthy.
+
+```javascript
+if (null) console.log("E");
+```
+
+**Không in.** `null` là falsy.
+
+```javascript
+if (0) console.log("F");
+```
+
+**Không in.** `0` là falsy.
+
+```javascript
+if (-1) console.log("G");
+```
+
+**Có in.** Số khác `0` là truthy.
+
+```javascript
+if (" ") console.log("H");
+```
+
+**Có in.** Chuỗi chứa dấu cách không phải chuỗi rỗng, nên là truthy.
+
+### Output tổng hợp
+
+```text
+A
+C
+D
+G
+H
+```
+
+---
