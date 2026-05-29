@@ -342,3 +342,199 @@ var html = `
 ```
 
 ---
+
+# PHẦN C 
+
+## Câu C1 — Debug JavaScript
+
+### Code ban đầu
+---
+
+## Các lỗi và cách sửa
+
+### Lỗi 1: Thiếu kiểm tra `giaBan` có phải số hay không
+
+Code test truyền vào:
+
+```javascript
+const gia = tinhGiaGiamGia("100000", 20)
+```
+
+`"100000"` là chuỗi, không phải number. JavaScript có thể tự ép kiểu khi nhân/chia/trừ, nhưng cách viết này không an toàn. Nên kiểm tra input rõ ràng.
+
+Cách sửa:
+
+```javascript
+if (typeof giaBan !== "number" || Number.isNaN(giaBan)) {
+    return "Giá bán không hợp lệ";
+}
+```
+
+---
+
+### Lỗi 2: Thiếu kiểm tra `phanTramGiam` có phải số hay không
+
+Nếu `phanTramGiam` là chuỗi hoặc giá trị không hợp lệ, chương trình có thể tính sai.
+
+Cách sửa:
+
+```javascript
+if (typeof phanTramGiam !== "number" || Number.isNaN(phanTramGiam)) {
+    return "Phần trăm giảm không hợp lệ";
+}
+```
+
+---
+
+### Lỗi 3: Chưa kiểm tra `giaBan` âm
+
+Giá bán không nên là số âm.
+
+Cách sửa:
+
+```javascript
+if (giaBan < 0) {
+    return "Giá bán không được âm";
+}
+```
+
+---
+
+### Lỗi 4: Dùng phép gán `=` thay vì phép so sánh
+
+Code sai:
+
+```javascript
+if (giaSauGiam = 0) {
+    console.log("Sản phẩm miễn phí!")
+}
+```
+
+Dấu `=` là phép gán, không phải phép so sánh. Dòng này gán `0` cho `giaSauGiam`, làm sai kết quả.
+
+Cách sửa:
+
+```javascript
+if (giaSauGiam === 0) {
+    console.log("Sản phẩm miễn phí!");
+}
+```
+
+---
+
+### Lỗi 5: Dùng `var` cho biến `giamGia`
+
+Code cũ:
+
+```javascript
+var giamGia = giaBan * phanTramGiam / 100
+```
+
+`var` có function scope và dễ gây lỗi do hoisting. Trong code hiện đại nên dùng `const` nếu biến không gán lại.
+
+Cách sửa:
+
+```javascript
+const giamGia = giaBan * phanTramGiam / 100;
+```
+
+---
+
+### Lỗi 6: Thiếu dấu chấm phẩy
+
+JavaScript có ASI — Automatic Semicolon Insertion, nhưng nên viết dấu `;` để code rõ ràng và tránh lỗi trong một số trường hợp.
+
+Cách sửa:
+
+```javascript
+return "Phần trăm giảm không hợp lệ";
+```
+
+---
+
+### Lỗi 7: Lỗi ẩn do dùng `var` trong vòng lặp với `setTimeout`
+
+Code sai:
+
+```javascript
+for (var i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i)
+    }, 1000)
+}
+```
+
+Do `var` có function scope, tất cả callback trong `setTimeout` dùng chung một biến `i`. Khi `setTimeout` chạy, vòng lặp đã kết thúc và `i` bằng `5`. Vì vậy chương trình sẽ in:
+
+```text
+Item 5
+Item 5
+Item 5
+Item 5
+Item 5
+```
+
+Cách sửa bằng `let`:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);
+    }, 1000);
+}
+```
+
+`let` có block scope, mỗi vòng lặp có một bản sao riêng của `i`, nên kết quả là:
+
+```text
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
+
+---
+
+## Code đã sửa hoàn chỉnh
+
+```javascript
+function tinhGiaGiamGia(giaBan, phanTramGiam) {
+    if (typeof giaBan !== "number" || Number.isNaN(giaBan)) {
+        return "Giá bán không hợp lệ";
+    }
+
+    if (giaBan < 0) {
+        return "Giá bán không được âm";
+    }
+
+    if (typeof phanTramGiam !== "number" || Number.isNaN(phanTramGiam)) {
+        return "Phần trăm giảm không hợp lệ";
+    }
+
+    if (phanTramGiam < 0 || phanTramGiam > 100) {
+        return "Phần trăm giảm không hợp lệ";
+    }
+
+    const giamGia = giaBan * phanTramGiam / 100;
+    const giaSauGiam = giaBan - giamGia;
+
+    if (giaSauGiam === 0) {
+        console.log("Sản phẩm miễn phí!");
+    }
+
+    return giaSauGiam;
+}
+
+const gia = tinhGiaGiamGia(100000, 20);
+console.log("Giá sau giảm: " + gia + "đ");
+
+const gia2 = tinhGiaGiamGia(50000, 110);
+console.log("Giá: " + gia2);
+
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);
+    }, 1000);
+}
+```
