@@ -168,3 +168,37 @@ Trong khi đó, toán tử `-` chỉ dùng cho phép trừ số học. Vì vậy
 ```
 
 ---
+
+## Câu A3 — So sánh `==` vs `===`
+
+```javascript
+console.log(5 == "5");          // true
+console.log(5 === "5");         // false
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+console.log(NaN == NaN);        // false
+console.log(0 == false);        // true
+console.log(0 === false);       // false
+console.log("" == false);       // true
+```
+
+### Giải thích
+
+- `==` là so sánh lỏng, có ép kiểu dữ liệu trước khi so sánh.
+- `===` là so sánh nghiêm ngặt, không ép kiểu dữ liệu.
+- `5 == "5"` là `true` vì chuỗi `"5"` bị ép thành số `5`.
+- `5 === "5"` là `false` vì một bên là `number`, một bên là `string`.
+- `null == undefined` là trường hợp đặc biệt trả về `true`.
+- `null === undefined` là `false` vì khác kiểu dữ liệu.
+- `NaN == NaN` là `false` vì `NaN` không bằng chính nó. Muốn kiểm tra `NaN`, dùng `Number.isNaN()`.
+- `0 == false` là `true` vì `false` bị ép thành `0`.
+- `0 === false` là `false` vì khác kiểu dữ liệu.
+- `"" == false` là `true` vì cả hai bị ép về giá trị số `0` khi so sánh lỏng.
+
+### Nên dùng `==` hay `===`?
+
+Nên dùng `===` trong hầu hết trường hợp.
+
+Lý do: `===` không tự ép kiểu nên kết quả rõ ràng, dễ dự đoán và tránh lỗi logic bất ngờ. Chỉ nên dùng `==` khi thật sự hiểu rõ quy tắc ép kiểu và có mục đích cụ thể.
+
+---
