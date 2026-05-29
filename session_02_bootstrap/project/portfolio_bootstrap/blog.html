@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs by lacie</title>
+    <a href="index.html"></a>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/comments.css">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-pastel: #f7f3ee;      
+            --pink-pastel: #e6c5b8;    
+            --text-dark: #4a443f;      
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        
+        .card {
+            border: none !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px; 
+            z-index: 1;
+        }
+        
+        .btn-lacie {
+            background-color: var(--pink-pastel);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .btn-lacie:hover {
+            background-color: #d1b0a4;
+            color: white;
+        }
+        .badge-lacie {
+            background-color: var(--bg-pastel);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand font-serif italic fs-3 text-lowercase" href="#">designs by lacie</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto align-items-center">
+                    <a class="nav-link mx-2" href="#">Home</a>
+                    <a class="nav-link mx-2" href="#">About</a>
+                    <a class="nav-link mx-2 active" href="#">Blog</a>
+                    <a class="nav-link mx-2" href="#">Portfolio</a>
+                    <a href="#" class="btn btn-lacie px-4 py-2 ms-2 text-uppercase btn-sm" style="font-size: 0.8rem; letter-spacing: 1px;">Let's Chat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="blog" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-lg-8">
+                    <h2 class="font-serif display-5 mb-4 italic">Latest Journal</h2>
+                    
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Branding Concept" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge badge-lacie px-3 py-2 text-uppercase fs-7">Branding</span>
+                            <h3 class="card-title mt-2 fw-normal">Understanding Your Brand Identity</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • May 15, 2026 • 4 min read</small>
+                            </p>
+                            <p class="card-text text-muted">A deep dive into how choosing the right color palettes and typography can connect your small business emotionally with your ideal clients.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Design Process" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge bg-dark text-white px-3 py-2 text-uppercase fs-7">Web Design</span>
+                            <h3 class="card-title mt-2 fw-normal">Minimalist Layouts That Convert</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • May 10, 2026 • 6 min read</small>
+                            </p>
+                            <p class="card-text text-muted">Why white space and clean grids are your best friends when designing an online portfolio that leaves a lasting impression.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Photography Tips" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <span class="badge badge-lacie px-3 py-2 text-uppercase fs-7">Lifestyle</span>
+                            <h3 class="card-title mt-2 fw-normal">Behind The Scenes of Creative Direction</h3>
+                            <p class="card-text text-muted">
+                                <small>By Lacie • Apr 28, 2026 • 5 min read</small>
+                            </p>
+                            <p class="card-text text-muted">Step into my studio and see the mood boards, rough sketches, and iterations that lead to final designs for our clients.</p>
+                            <a href="#" class="btn btn-outline-dark rounded-0 px-4">Read More</a>
+                        </div>
+                    </article>
+                    <div class="comment-section-area mt-5 pt-4 border-top">
+    
+    <div class="card mb-4 border-0 shadow-sm" style="background-color: #fbf9f6;">
+        <div class="card-header bg-transparent border-0 pt-4 px-4">
+            <h5 class="mb-0 font-serif fw-normal">Leave a Comment</h5>
+        </div>
+        <div class="card-body px-4 pb-4">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label small text-muted text-uppercase fw-medium">Name *</label>
+                        <input type="text" class="form-control rounded-0" id="name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label small text-muted text-uppercase fw-medium">Email *</label>
+                        <input type="email" class="form-control rounded-0" id="email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label small text-muted text-uppercase fw-medium">Comment *</label>
+                    <textarea class="form-control rounded-0" id="comment" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark rounded-0 px-4 text-uppercase fw-medium btn-sm" style="letter-spacing: 1px;">Post Comment</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments-display-wrapper mt-5">
+        <h5 class="mb-4 font-serif italic text-muted">3 Comments</h5>
+
+        <div class="comment-item mb-4">
+            <div class="d-flex">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" class="rounded-circle me-3" alt="Avatar">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0 fw-semibold text-dark">Melissa Harden</h6>
+                        <small class="text-muted">2 hours ago</small>
+                    </div>
+                    <p class="mb-2 text-muted small">Great article! Very helpful for beginners.</p>
+                    <button class="btn btn-sm p-0 border-0 text-decoration-none text-muted small"><i class="bi bi-reply-fill me-1"></i>Reply</button>
+
+                    <div class="reply ms-4 ms-md-5 mt-3 pt-2">
+                        <div class="d-flex">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="rounded-circle me-3" alt="Avatar">
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <h6 class="mb-0 fw-semibold text-dark font-serif italic">Lacie (Author)</h6>
+                                    <small class="text-muted">1 hour ago</small>
+                                </div>
+                                <p class="mb-0 text-muted small">Thank you! Glad it helped.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <hr class="text-black-50 opacity-25 my-4">
+
+        <div class="comment-item mb-4">
+            <div class="d-flex">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="rounded-circle me-3" alt="Avatar">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0 fw-semibold text-dark">Tony Crouch</h6>
+                        <small class="text-muted">3 hours ago</small>
+                    </div>
+                    <p class="mb-2 text-muted small">We love her designs and the ease of working with her.</p>
+                    <button class="btn btn-sm p-0 border-0 text-decoration-none text-muted small"><i class="bi bi-reply-fill me-1"></i>Reply</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="text-black-50 opacity-25 my-4">
+
+        <div class="comment-item mb-4">
+            <div class="d-flex">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=100&q=80" class="rounded-circle me-3" alt="Avatar">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0 fw-semibold text-dark">Madison DePoister</h6>
+                        <small class="text-muted">Yesterday</small>
+                    </div>
+                    <p class="mb-2 text-muted small">They were all so beautiful and elegant. I highly recommend her!</p>
+                    <button class="btn btn-sm p-0 border-0 text-decoration-none text-muted small"><i class="bi bi-reply-fill me-1"></i>Reply</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="sticky-sidebar pt-2">
+                        
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-normal mb-3">Search Journals</h5>
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-0 border-end-0" placeholder="Type keywords...">
+                                    <button class="btn btn-dark rounded-0 px-3" type="button"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                                <h5 class="mb-0 fw-normal">Categories</h5>
+                            </div>
+                            <ul class="list-group list-group-flush p-3 pt-2">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-2 py-2 text-muted">
+                                    Branding Design
+                                    <span class="badge badge-lacie rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-2 py-2 text-muted">
+                                    Web Systems
+                                    <span class="badge badge-lacie rounded-pill">8</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-2 py-2 text-muted">
+                                    Photography
+                                    <span class="badge badge-lacie rounded-pill">5</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                                <h5 class="mb-0 fw-normal">Recent Posts</h5>
+                            </div>
+                            <div class="card-body p-4 pt-3">
+                                <div class="d-flex mb-3 align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=150&q=80" class="rounded-0 object-fit-cover" width="60" height="60" alt="...">
+                                    <div class="ms-3">
+                                        <h6 class="mb-1 fw-normal" style="font-size: 0.95rem;"><a href="#" class="text-decoration-none text-dark">Your Brand Identity</a></h6>
+                                        <small class="text-muted">May 15, 2026</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=150&q=80" class="rounded-0 object-fit-cover" width="60" height="60" alt="...">
+                                    <div class="ms-3">
+                                        <h6 class="mb-1 fw-normal" style="font-size: 0.95rem;"><a href="#" class="text-decoration-none text-dark">Minimalist Layouts</a></h6>
+                                        <small class="text-muted">May 10, 2026</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                                <h5 class="mb-0 fw-normal">Tags Cloud</h5>
+                            </div>
+                            <div class="card-body p-4 pt-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-light text-dark px-2 py-2 fw-normal">#HTML5</span>
+                                    <span class="badge bg-light text-dark px-2 py-2 fw-normal">#Bootstrap5</span>
+                                    <span class="badge bg-light text-dark px-2 py-2 fw-normal">#UXUI</span>
+                                    <span class="badge bg-light text-dark px-2 py-2 fw-normal">#Typography</span>
+                                    <span class="badge bg-light text-dark px-2 py-2 fw-normal">#Pastel</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> </div>
+        </div>
+    </section>
+
+    <footer class="bg-light text-center py-4 border-top">
+        <p class="mb-0 text-muted small">&copy; 2026 Designs by Lacie. Crafted with Bootstrap.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
