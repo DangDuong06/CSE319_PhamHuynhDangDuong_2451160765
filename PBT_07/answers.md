@@ -119,3 +119,52 @@ Ngoài block: 1
 **Giải thích:**
 
 `let` có phạm vi theo block `{}`. Biến `a` bên trong block là một biến khác với biến `a` bên ngoài block. Vì vậy trong block in ra `2`, ngoài block in ra `1`.
+
+## Câu A2 — Data Types & Coercion
+
+```javascript
+console.log(typeof null);      // object
+console.log(typeof undefined); // undefined
+console.log(typeof NaN);       // number
+console.log("5" + 3);          // "53"
+console.log("5" - 3);          // 2
+console.log("5" * "3");       // 15
+console.log(true + true);      // 2
+console.log([] + []);          // ""
+console.log([] + {});          // "[object Object]"
+console.log({} + []);          // 0 hoặc "[object Object]" tùy môi trường/
+```
+
+### Giải thích chi tiết
+
+- `typeof null` trả về `"object"`. Đây là một lỗi lịch sử của JavaScript, nhưng vẫn được giữ lại để tương thích ngược.
+- `typeof undefined` trả về `"undefined"`.
+- `NaN` là viết tắt của `Not a Number`, nhưng bản thân nó vẫn thuộc kiểu dữ liệu `number`.
+- `"5" + 3` trả về `"53"` vì toán tử `+` nếu gặp chuỗi sẽ ưu tiên nối chuỗi.
+- `"5" - 3` trả về `2` vì toán tử `-` không dùng để nối chuỗi, nên JavaScript ép `"5"` thành số `5` rồi tính `5 - 3`.
+- `"5" * "3"` trả về `15` vì toán tử `*` ép hai chuỗi số thành số.
+- `true + true` trả về `2` vì `true` được ép thành `1`.
+- `[] + []` trả về chuỗi rỗng vì mảng rỗng khi chuyển thành chuỗi sẽ là `""`.
+- `[] + {}` trả về `"[object Object]"` vì `[]` thành `""`, object thành `"[object Object]"`.
+- `{} + []` có thể cho kết quả khác nhau tùy môi trường. Trong Node.js hiện đại, nếu viết trong biểu thức `console.log({} + [])`, object được chuyển thành chuỗi nên thường ra `"[object Object]"`. Nhưng nếu gõ trực tiếp trong console ở một số môi trường, `{}` có thể bị hiểu là block rỗng, khi đó `+[]` thành `0`.
+
+### Tại sao `"5" + 3` và `"5" - 3` khác nhau?
+
+Toán tử `+` trong JavaScript có hai vai trò:
+
+1. Cộng số.
+2. Nối chuỗi.
+
+Khi một toán hạng là chuỗi, `+` thường ưu tiên nối chuỗi. Vì vậy:
+
+```javascript
+"5" + 3 // "53"
+```
+
+Trong khi đó, toán tử `-` chỉ dùng cho phép trừ số học. Vì vậy JavaScript ép chuỗi `"5"` thành số `5`:
+
+```javascript
+"5" - 3 // 2
+```
+
+---
