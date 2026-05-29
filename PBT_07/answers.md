@@ -284,3 +284,61 @@ H
 ```
 
 ---
+## Câu A5 — Template Literals
+
+### Cách 1
+
+Code cũ:
+
+```javascript
+var greeting = "Xin chào " + name + "! Bạn " + age + " tuổi.";
+```
+
+Viết bằng template literal:
+
+```javascript
+var greeting = `Xin chào ${name}! Bạn ${age} tuổi.`;
+```
+
+---
+
+### Cách 2
+
+Code cũ:
+
+```javascript
+var url = "https://api.example.com/users/" + userId + "/orders?page=" + page;
+```
+
+Viết bằng template literal:
+
+```javascript
+var url = `https://api.example.com/users/${userId}/orders?page=${page}`;
+```
+
+---
+
+### Cách 3
+
+Code cũ:
+
+```javascript
+var html = "<div class=\"card\">" +
+    "<h2>" + title + "</h2>" +
+    "<p>" + description + "</p>" +
+    "<span>Giá: " + price + "đ</span>" +
+    "</div>";
+```
+
+Viết bằng template literal:
+
+```javascript
+var html = `
+<div class="card">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <span>Giá: ${price}đ</span>
+</div>`;
+```
+
+---
