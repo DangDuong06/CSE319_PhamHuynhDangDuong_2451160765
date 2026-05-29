@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>QUẢN LÝ SINH VIÊN</h1>
+
+       
+        <div class="top-action">
+            <button id="btnAdd">+ Thêm Sinh Viên</button>
+        </div>
+
+       
+        <div id="notification"></div>
+
+      
+        <div class="statistics">
+            <div class="box">
+                <h3>Tổng Sinh Viên</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="box">
+                <h3>Điểm Trung Bình</h3>
+                <p id="avgScore">0</p>
+            </div>
+        </div>
+
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã SV</th>
+                    <th>Họ Tên</th>
+                    <th>Ngày Sinh</th>
+                    <th>Lớp</th>
+                    <th>Điểm</th>
+                    <th>Email</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentList">
+
+            </tbody>
+        </table>
+
+    </div>
+
+   
+    <div class="modal hidden" id="studentModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Thêm Sinh Viên</h2>
+                <button id="btnClose">&times;</button>
+            </div>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label>Mã Sinh Viên</label>
+                    <input type="text" id="studentId">
+                    <small class="error" id="studentIdError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Họ Và Tên</label>
+                    <input type="text" id="fullName">
+                    <small class="error" id="fullNameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày Sinh</label>
+                    <input type="date" id="birthDate">
+                    <small class="error" id="birthDateError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Lớp</label>
+                    <input type="text" id="className">
+                    <small class="error" id="classNameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Điểm</label>
+                    <input type="number" step="0.1" id="score">
+                    <small class="error" id="scoreError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email">
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <div class="form-action">
+                    <button type="submit" id="btnSubmit">
+                        Lưu Sinh Viên
+                    </button>
+
+                    <button type="button" id="btnCancel">
+                        Hủy
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
