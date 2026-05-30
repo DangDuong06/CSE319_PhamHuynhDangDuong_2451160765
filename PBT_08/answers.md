@@ -76,3 +76,48 @@ const tinhThueBaoHiemExpression = function(luong) {
 Kết quả: `ReferenceError`.
 
 ---
+## Câu A2 — Scope & Closure
+
+### Đoạn 1
+
+```javascript
+console.log(c.increment());  // 1
+console.log(c.increment());  // 2
+console.log(c.increment());  // 3
+console.log(c.decrement());  // 2
+console.log(c.getCount());   // 2
+```
+
+Giải thích:
+
+Hàm `counter()` tạo biến cục bộ `count = 0`. Object trả về có 3 method: `increment`, `decrement`, `getCount`. Các method này vẫn nhớ được biến `count` dù `counter()` đã chạy xong. Đây là closure.
+
+### Đoạn 2
+
+```javascript
+for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log("var:", i), 100);
+}
+for (let j = 0; j < 3; j++) {
+    setTimeout(() => console.log("let:", j), 200);
+}
+```
+
+Output:
+
+```text
+var: 3
+var: 3
+var: 3
+let: 0
+let: 1
+let: 2
+```
+
+Giải thích:
+
+`var` có function scope, nên cả 3 callback dùng chung một biến `i`. Khi `setTimeout` chạy, vòng lặp đã kết thúc và `i = 3`.
+
+`let` có block scope. Mỗi vòng lặp tạo ra một biến `j` riêng, nên callback nhớ đúng giá trị tại từng vòng lặp.
+
+---
