@@ -190,3 +190,53 @@ window.addEventListener("beforeunload", () => {
 ```
 
 ---
+
+## Câu C2 — Performance
+
+### 1. Vì sao bind event lên 1000 elements là bad practice?
+
+Nếu có 1000 phần tử và mỗi phần tử đều có một `addEventListener`, trình duyệt phải lưu và quản lý 1000 listener. Điều này làm tốn bộ nhớ, khó bảo trì, và khi thêm/xóa phần tử động thì phải bind/unbind event liên tục.
+
+Event Delegation giải quyết bằng cách gắn một listener duy nhất lên phần tử cha. Khi user click vào phần tử con, event sẽ bubble lên cha. Ta kiểm tra `event.target` để biết phần tử nào được click.
+
+Ví dụ:
+
+```javascript
+const list = document.querySelector("#list");
+
+list.addEventListener("click", (e) => {
+    if (e.target.classList.contains("item")) {
+        console.log("Clicked:", e.target.textContent);
+    }
+});
+```
+
+### 2. Refactor dùng DocumentFragment
+
+Code cũ:
+
+```javascript
+for (let i = 0; i < 1000; i++) {
+    const div = document.createElement("div");
+    div.textContent = `Item ${i}`;
+    document.body.appendChild(div);
+}
+```
+
+Code tốt hơn:
+
+```javascript
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < 1000; i++) {
+    const div = document.createElement("div");
+    div.textContent = `Item ${i}`;
+    fragment.appendChild(div);
+}
+
+document.body.appendChild(fragment);
+```
+
+Giải thích:
+
+`DocumentFragment` là vùng chứa DOM tạm thời trong bộ nhớ. Ta thêm 1000 phần tử vào fragment trước, sau đó append fragment vào DOM thật một lần. Nhờ vậy trình duyệt giảm số lần reflow/repaint, hiệu năng tốt hơn.
