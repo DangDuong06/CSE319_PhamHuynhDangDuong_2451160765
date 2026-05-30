@@ -117,3 +117,76 @@ BUTTON
 Vì `stopPropagation()` chặn không cho event tiếp tục nổi bọt lên các phần tử cha.
 
 ---
+
+# PHẦN C 
+
+## Câu C1 — Debug DOM Code
+
+### Các lỗi trong code
+
+1. `countDisplay` khai báo bằng `const`, nhưng ở reset lại gán `countDisplay = count`, gây lỗi vì không được gán lại biến const.
+2. Khi reset phải dùng `countDisplay.textContent = count`, không phải `countDisplay = count`.
+3. `addEventListener("onclick", ...)` sai tên event. Đúng là `addEventListener("click", ...)`.
+4. Dùng `innerHTML` để hiển thị số là không cần thiết. Nên dùng `textContent`.
+5. `historyList.innerHTML = null` không nên dùng. Nên dùng `historyList.textContent = ""` hoặc `replaceChildren()`.
+6. Trong clear history, `item.remove;` chỉ tham chiếu hàm, không gọi hàm. Đúng là `item.remove()`.
+7. Khi lấy `count` từ localStorage, giá trị là string. Cần ép kiểu bằng `Number()`.
+8. Chưa load lại history từ localStorage.
+9. Bind click riêng cho từng `li` không tối ưu nếu history nhiều. Có thể dùng event delegation trên `historyList`.
+10. Nên dùng `appendChild(li)` rõ ràng hơn thay vì `append(li)` trong bài cơ bản.
+
+### Code đã sửa
+
+```javascript
+const countDisplay = document.querySelector(".count");
+const historyList = document.getElementById("history");
+
+let count = Number(localStorage.getItem("count")) || 0;
+countDisplay.textContent = count;
+historyList.innerHTML = localStorage.getItem("history") || "";
+
+function updateCountDisplay() {
+    countDisplay.textContent = count;
+}
+
+function addHistory(message) {
+    const li = document.createElement("li");
+    li.textContent = message;
+    historyList.appendChild(li);
+}
+
+document.querySelector("#incrementBtn").addEventListener("click", function() {
+    count++;
+    updateCountDisplay();
+    addHistory("Count changed to " + count);
+});
+
+document.querySelector("#decrementBtn").addEventListener("click", function() {
+    count--;
+    updateCountDisplay();
+    addHistory("Count changed to " + count);
+});
+
+document.querySelector("#resetBtn").addEventListener("click", () => {
+    count = 0;
+    updateCountDisplay();
+    historyList.replaceChildren();
+});
+
+historyList.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+        e.target.remove();
+    }
+});
+
+document.querySelector("#clearHistory").addEventListener("click", () => {
+    historyList.replaceChildren();
+});
+
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("count", String(count));
+    localStorage.setItem("history", historyList.innerHTML);
+});
+```
+
+---
