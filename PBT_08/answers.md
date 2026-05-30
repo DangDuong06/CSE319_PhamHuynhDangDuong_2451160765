@@ -153,3 +153,44 @@ true
 
 ---
 
+## Câu A4 — Object Destructuring & Spread
+
+```javascript
+const product = {
+    name: "iPhone 16",
+    price: 25990000,
+    specs: { ram: 8, storage: 256, color: "Titan" }
+};
+
+const { name, price, specs: { ram, color } } = product;
+console.log(name, price, ram, color);
+console.log(specs);
+```
+
+Output:
+
+```text
+iPhone 16 25990000 8 Titan
+ReferenceError: specs is not defined
+```
+
+Giải thích: `specs: { ram, color }` chỉ lấy `ram` và `color` từ object con `specs`, không tạo biến tên `specs`.
+
+```javascript
+const updated = { ...product, price: 23990000, sale: true };
+console.log(updated.price);   // 23990000
+console.log(updated.sale);    // true
+console.log(product.price);   // 25990000
+```
+
+Object gốc không đổi vì spread tạo object mới ở cấp ngoài.
+
+```javascript
+const copy = { ...product };
+copy.specs.ram = 16;
+console.log(product.specs.ram); // 16
+```
+
+Giải thích: spread object là shallow copy. Object con `specs` vẫn được tham chiếu chung giữa `product` và `copy`.
+
+---
