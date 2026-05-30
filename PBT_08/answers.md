@@ -121,3 +121,35 @@ Giải thích:
 `let` có block scope. Mỗi vòng lặp tạo ra một biến `j` riêng, nên callback nhớ đúng giá trị tại từng vòng lặp.
 
 ---
+
+
+## Câu A3 — Array Methods
+
+```javascript
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const evenNumbers = nums.filter(n => n % 2 === 0);
+const multipliedByThree = nums.map(n => n * 3);
+const sum = nums.reduce((total, n) => total + n, 0);
+const firstGreaterThanSeven = nums.find(n => n > 7);
+const hasGreaterThanTen = nums.some(n => n > 10);
+const allGreaterThanZero = nums.every(n => n > 0);
+const descriptions = nums.map(n => `Số ${n} là ${n % 2 === 0 ? "chẵn" : "lẻ"}`);
+const reversed = [...nums].reverse();
+```
+
+Kết quả:
+
+```javascript
+[2, 4, 6, 8, 10]
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+55
+8
+false
+true
+["Số 1 là lẻ", "Số 2 là chẵn", ...]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
+
+---
+
