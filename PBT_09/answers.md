@@ -89,3 +89,31 @@ result.replaceChildren(document.createTextNode(userInput));
 ```
 
 ---
+
+## Câu A3 — Event Bubbling
+
+Khi click vào button:
+
+```text
+BUTTON
+INNER
+OUTER
+```
+
+Giải thích: Sự kiện click xảy ra ở button trước, sau đó nổi bọt lên cha `#inner`, rồi tiếp tục nổi lên `#outer`.
+
+Nếu bỏ comment:
+
+```javascript
+e.stopPropagation();
+```
+
+Output chỉ còn:
+
+```text
+BUTTON
+```
+
+Vì `stopPropagation()` chặn không cho event tiếp tục nổi bọt lên các phần tử cha.
+
+---
