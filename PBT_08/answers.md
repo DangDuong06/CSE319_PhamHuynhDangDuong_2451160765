@@ -194,3 +194,27 @@ console.log(product.specs.ram); // 16
 Giải thích: spread object là shallow copy. Object con `specs` vẫn được tham chiếu chung giữa `product` và `copy`.
 
 ---
+# PHẦN C 
+
+## Câu C1 — Refactor Code
+
+Code sau sử dụng `filter`, `map`, `sort`, destructuring và arrow function:
+
+```javascript
+const processOrders = orders => orders
+    .filter(({ status, total }) => status === "completed" && total > 100000)
+    .map(({ id, customer, total }) => {
+        const discount = total * 0.1;
+        return { id, customer, total, discount, finalTotal: total - discount };
+    })
+    .sort((a, b) => b.finalTotal - a.finalTotal);
+```
+
+Giải thích:
+
+- `filter()` lọc đơn hàng đã completed và tổng tiền lớn hơn 100000.
+- `map()` biến mỗi đơn hàng thành object mới có thêm `discount` và `finalTotal`.
+- `sort()` sắp xếp giảm dần theo `finalTotal`.
+- Destructuring giúp lấy trực tiếp `id`, `customer`, `total`, `status` từ object.
+
+---
