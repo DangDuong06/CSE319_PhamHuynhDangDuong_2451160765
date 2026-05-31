@@ -9,8 +9,8 @@ function App() {
         <div>
             <NumberState />
             {/* <StringState /> */}
-            { <BooleanState /> }
-            {/* <MultipleStates /> */}
+            {/* <BooleanState /> */}
+            {<MultipleStates />}
         </div>
     );
 }
