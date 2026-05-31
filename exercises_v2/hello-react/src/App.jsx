@@ -8,8 +8,8 @@ function App() {
     return (
         <div>
             <NumberState />
-            { <StringState />}
-            {/* <BooleanState /> */}
+            {/* <StringState /> */}
+            { <BooleanState /> }
             {/* <MultipleStates /> */}
         </div>
     );
