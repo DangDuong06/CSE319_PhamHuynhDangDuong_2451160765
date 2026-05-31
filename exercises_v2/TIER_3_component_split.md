@@ -9,4 +9,4 @@
 ### Kết quả thực hiện Bài 3.3
 - Đã xây dựng thành công cấu trúc nhận dữ liệu động bằng cơ chế Props Destructuring `{ name, email, avatar }` cho component con.
 - Đã vận dụng tính toán toán học logic (tính phần trăm giảm giá) ngay từ các tham số đầu vào của Props để kết xuất thông tin trực quan ra giao diện thẻ sản phẩm.
-- Đã thực hiện render vòng lặp mảng đối tượng phức tạp để tạo ra 3 thẻ người dùng (`UserCard`) có nội dung và hình ảnh định danh hoàn toàn khác nhau.
+- Đã thực hiện render vòng lặp mảng đối tượng phức tạp để tạo ra 3 thẻ người dùng (`UserCard`) có nội dung và hình ảnh định danh hoàn toàn khác nhau
