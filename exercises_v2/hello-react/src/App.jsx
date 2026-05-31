@@ -1,10 +1,12 @@
 // src/App.jsx
-import LifecycleDemo from "./LifecycleDemo";
+import BadCounter from "./BadCounter"; 
+import GoodCounter from "./GoodCounter"; 
 
 function App() {
     return (
         <div>
-            <LifecycleDemo />
+            <BadCounter />
+            <GoodCounter />
         </div>
     );
 }
