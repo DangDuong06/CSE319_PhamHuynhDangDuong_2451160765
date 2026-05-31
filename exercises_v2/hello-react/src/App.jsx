@@ -1,14 +1,12 @@
 // src/App.jsx
-import BadCounter from "./BadCounter"; 
-import GoodCounter from "./GoodCounter"; 
+import FlowDemo from "./FlowDemo"; // Nhập bài 1.3[cite: 3]
 
 function App() {
     return (
         <div>
-            <BadCounter />
-            <GoodCounter />
+            <FlowDemo />
         </div>
     );
 }
 
-export default App;
+export default App; //[cite: 3]
