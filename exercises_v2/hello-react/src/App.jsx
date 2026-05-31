@@ -8,7 +8,7 @@ function App() {
     return (
         <div>
             <NumberState />
-            {/* <StringState /> */}
+            { <StringState />}
             {/* <BooleanState /> */}
             {/* <MultipleStates /> */}
         </div>
