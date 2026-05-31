@@ -1,5 +1,7 @@
 // hello-react/src/App.jsx
-import ProductCard from "./components/ProductCard"; // Import component con vào đây
+import Header from "./components/Header";
+import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 
 function App() {
     const products = [
@@ -9,18 +11,27 @@ function App() {
     ];
 
     return (
-        <div style={{ fontFamily: "sans-serif", padding: "20px" }}>
-            <h1 style={{ textAlign: "center" }}>Cửa hàng điện thoại của Dương</h1>
-            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-                {products.map(product => (
-                    <ProductCard 
-                        key={product.id}
-                        name={product.name}
-                        price={product.price}
-                        image={product.image}
-                    />
-                ))}
-            </div>
+        <div style={{ fontFamily: "sans-serif", margin: 0, padding: 0, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            {/* 1. Nhúng Header */}
+            <Header />
+            
+            {/* 2. Phần nội dung chính (Main Content) */}
+            <main style={{ flex: 1, padding: "20px" }}>
+                <h2 style={{ textAlign: "center", color: "#2c3e50" }}>Danh sách sản phẩm nổi bật</h2>
+                <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", marginTop: "20px" }}>
+                    {products.map(product => (
+                        <ProductCard 
+                            key={product.id}
+                            name={product.name}
+                            price={product.price}
+                            image={product.image}
+                        />
+                    ))}
+                </div>
+            </main>
+            
+            {/* 3. Nhúng Footer */}
+            <Footer />
         </div>
     );
 }
