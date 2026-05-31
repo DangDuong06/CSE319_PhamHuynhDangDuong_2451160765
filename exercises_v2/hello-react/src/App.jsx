@@ -1,12 +1,16 @@
 // src/App.jsx
-import FlowDemo from "./FlowDemo"; // Nhập bài 1.3[cite: 3]
+import SimpleVariables from "./SimpleVariables";
+import ConditionalDemo from "./ConditionalDemo";
+import ListRendering from "./ListRendering";
 
 function App() {
     return (
         <div>
-            <FlowDemo />
+            {/* <SimpleVariables /> */}
+            <ConditionalDemo />
+            {/* <ListRendering /> */}
         </div>
     );
 }
 
-export default App; //[cite: 3]
+export default App;
