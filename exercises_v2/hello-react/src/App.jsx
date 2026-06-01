@@ -1,16 +1,16 @@
 // src/App.jsx
-import ClickEvents from "./ClickEvents";
-import InputEvents from "./InputEvents";
-import KeyboardEvents from "./KeyboardEvents";
-import FormEvents from "./FormEvents";
+import ListBasics from "./ListBasics";
+import CreateItem from "./CreateItem";
+import DeleteItem from "./DeleteItem";
+import UpdateItem from "./UpdateItem";
 
 function App() {
     return (
         <div>
-            <ClickEvents />
-            {/* <InputEvents /> */}
-            {/* <KeyboardEvents /> */}
-            {<FormEvents /> }
+            <ListBasics />
+            {/* <CreateItem /> */}
+            {/* <DeleteItem /> */}
+            {/* <UpdateItem /> */}
         </div>
     );
 }
