@@ -9,8 +9,8 @@ function App() {
         <div>
             <ListBasics />
             {/* <CreateItem /> */}
-            { <DeleteItem />}
-            {/* <UpdateItem /> */}
+            {/* <DeleteItem /> */}
+            {<UpdateItem />}
         </div>
     );
 }
