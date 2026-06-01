@@ -1,0 +1,4 @@
+### Kết quả thực hiện Dự án Mini (Tier 7)
+- Đã triển khai thành công mô hình kiến trúc phân cấp component hoàn chỉnh: File `App.jsx` đóng vai trò quản lý State tập trung (Single Source of Truth), phân phát dữ liệu xuống các cấu phần độc lập `TodoItem.jsx` và `TodoFilter.jsx` bằng Props.
+- Giải quyết triệt để các thử thách mở rộng của **Level 1**: tích hợp thành công thuộc tính thời gian `createdAt` dạng chuỗi động, tính toán kết xuất giá trị đếm tổng số tác vụ `totalCount`, và ràng buộc điều kiện đổi thuộc tính `placeholder` linh hoạt theo từng sự kiện click bộ lọc.
+- Vận dụng tốt các phương thức mảng nguyên bản `.filter()` và `.map()` để xử lý mượt mà trọn vẹn chu trình CRUD dữ liệu trên giao diện web.
