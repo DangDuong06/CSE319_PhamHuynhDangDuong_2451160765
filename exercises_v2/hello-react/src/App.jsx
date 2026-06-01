@@ -1,16 +1,16 @@
 // src/App.jsx
-import NumberState from "./NumberState";
-import StringState from "./StringState";
-import BooleanState from "./BooleanState";
-import MultipleStates from "./MultipleStates";
+import ClickEvents from "./ClickEvents";
+import InputEvents from "./InputEvents";
+import KeyboardEvents from "./KeyboardEvents";
+import FormEvents from "./FormEvents";
 
 function App() {
     return (
         <div>
-            <NumberState />
-            {/* <StringState /> */}
-            {/* <BooleanState /> */}
-            {<MultipleStates />}
+            <ClickEvents />
+            {/* <InputEvents /> */}
+            {/* <KeyboardEvents /> */}
+            {/* <FormEvents /> */}
         </div>
     );
 }
