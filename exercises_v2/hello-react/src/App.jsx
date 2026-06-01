@@ -8,8 +8,8 @@ function App() {
     return (
         <div>
             <ListBasics />
-            {<CreateItem />}
-            {/* <DeleteItem /> */}
+            {/* <CreateItem /> */}
+            { <DeleteItem />}
             {/* <UpdateItem /> */}
         </div>
     );
